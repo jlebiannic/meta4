@@ -1,18 +1,16 @@
 package parser.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Salarie {
+public class Salarie extends ObjectModel {
     //	Salarie matricule="00009J" nomFamille="GONVER" prenom="VERONIQUE" mail="veronique.gonver@toto.com"
     private String matricule;
-    private String nomFamille;
+    private String nom;
     private String prenom;
     private String mail;
     private String typeContrat;
@@ -27,7 +25,7 @@ public class Salarie {
     public Salarie(String matricule, String nomFamille, String prenom, String mail) {
         super();
         this.matricule = matricule;
-        this.nomFamille = nomFamille;
+        this.nom = nomFamille;
         this.prenom = prenom;
         this.mail = mail;
         this.type = "Salarie";

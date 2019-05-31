@@ -17,13 +17,16 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import parser.model.Entite;
 import parser.model.Groupe;
+import parser.model.ObjectModel;
 import parser.model.Salarie;
 import parser.model.StructureOrganisationnelle;
 import parser.model.UniteTravail;
+import parser.model.UtParent;
 import parser.model.factory.FregsFactory;
 
 public class ParseMeta4 {
@@ -31,6 +34,8 @@ public class ParseMeta4 {
     private static Map<String, UniteTravail> code2ut = new HashMap<>();
     private static Map<UniteTravail, List<UniteTravail>> parentUt2children = new HashMap<>();
     private static List<UniteTravail> rootUTs = new ArrayList<>();
+    private static List<UniteTravail> allUts = new ArrayList<>();
+    private static List<Salarie> allSalaries = new ArrayList<>();
     private static Map<UniteTravail, List<Salarie>> ut2salaries = new HashMap<>();
     private static Map<String, Salarie> matricule2salarie = new HashMap<>();
     private static Map<UniteTravail, Salarie> ut2manager = new HashMap<>();
@@ -59,13 +64,19 @@ public class ParseMeta4 {
                 Element utMarkup = (Element) unitesTravail.item(indexUT);
                 UniteTravail ut = new UniteTravail(
                         utMarkup.getAttribute("codeUT"),
-                        utMarkup.getAttribute("datedebut"),
-                        utMarkup.getAttribute("dateFin"),
+                        //                        utMarkup.getAttribute("datedebut"),
+                        //                        utMarkup.getAttribute("dateFin"),
                         utMarkup.getAttribute("libelle"),
                         utMarkup.getAttribute("codeSociete"),
                         utMarkup.getAttribute("codeEtablissement"));
                 code2ut.put(ut.getCodeUT(), ut);
+                allUts.add(ut);
+
+                linkWithUtParentForTags(utMarkup, ut, "UTMere");
             }
+
+            // transformation de la collection d'UTs en JSON
+            objectToJsonFile(allUts, "target/uts.withDate.json");
 
             // SALARIE
             NodeList salaries = doc.getElementsByTagName("Salarie");
@@ -77,6 +88,8 @@ public class ParseMeta4 {
                         salarieMarkup.getAttribute("prenom"),
                         salarieMarkup.getAttribute("mail"));
                 matricule2salarie.put(salarie.getMatricule(), salarie);
+                allSalaries.add(salarie);
+                linkWithUtParentForTags(salarieMarkup, salarie, "RattachementUniteTravail");
                 // Rattachement Unité de travail
                 if (salarieMarkup.getElementsByTagName("RattachementUniteTravail").getLength() > 0) {
                     String codeUt = ((Element) salarieMarkup.getElementsByTagName("RattachementUniteTravail").item(0)).getAttribute("codeUT");
@@ -122,6 +135,9 @@ public class ParseMeta4 {
 
             }
 
+            // transformation de la collection de salaries en JSON
+            objectToJsonFile(allSalaries, "target/salaries.withDate.json");
+
             // Second pass : resolve hierarchy + manager
             for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
                 Element utMarkup = (Element) unitesTravail.item(indexUT);
@@ -161,19 +177,46 @@ public class ParseMeta4 {
             System.out.println(unitesTravail.getLength() + " unités de travail");
             System.out.println(salaries.getLength() + " salariés");
 
-            //			for (UniteTravail uniteTravail : rootUTs) {
-            //				printUt(uniteTravail, "", 1);
-            //			}
+            //            for (UniteTravail uniteTravail : rootUTs) {
+            //                printUt(uniteTravail, "", 1);
+            //            }
             //            for (UniteTravail uniteTravail : rootUTs) {
             //                createHtmlTree(uniteTravail);
             //            }
 
-            //System.out.println(createMongoCollectionUts(rootUTs));
-            //            createMongoCollectionSalarie();
-            createFregsTree();
+            // System.out.println(createMongoCollectionUts(rootUTs));
+
+            // createMongoCollectionSalarie();
+
+            // Cr�ation de l'arbre des FREGS
+            // createFregsTree();
 
             //            System.out.println("MaxDeep : " + maxDeep);
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void linkWithUtParentForTags(Element element, ObjectModel objectModel, String tagname) {
+        NodeList utChildrenNodeList = element.getElementsByTagName(tagname);
+        for (int idxUtChildrenNodeList = 0; idxUtChildrenNodeList < utChildrenNodeList.getLength(); idxUtChildrenNodeList++) {
+            Element utChildElement = (Element) utChildrenNodeList.item(idxUtChildrenNodeList);
+
+            UtParent utParent = new UtParent(utChildElement.getAttribute("codeUT"), utChildElement.getAttribute("dateDebut").replaceAll(
+                    "-",
+                    ""),
+                    utChildElement.getAttribute("dateFin").replaceAll("-", ""));
+            objectModel.getUtParents().add(utParent);
+
+        }
+    }
+
+    private static void objectToJsonFile(Object object, String fileName) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setSerializationInclusion(Include.NON_NULL);
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), object);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -189,7 +232,7 @@ public class ParseMeta4 {
             System.out.print(
                     "\t{\"matricule\":\"" + matricule
                             + "\",\"prenom\":\"" + salarie.getPrenom()
-                            + "\",\"nom\":\"" + salarie.getNomFamille()
+                            + "\",\"nom\":\"" + salarie.getNom()
                             + "\",\"mail\":\"" + salarie.getMail()
                             + "\",\"codeUtOrigine\":\"" + matricule2utCode.get(matricule)
                             + "\",\"typeContrat\":\"" + salarie.getTypeContrat()
