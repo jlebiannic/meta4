@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<h2>Hiérarchie Meta4</h2>
+
+<ul id="myUL">
+<li><span class="caret"><b>XX - Direction</b> (1 salarié direct) (7552 salariés au total) (sous UTs : 1118) (profondeur : 7)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAFS - Direction Administratif Finances et Services</b> (2 salariés directs) (426 salariés au total) (sous UTs : 79) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAF - Gestion Economique</b> (1 salarié direct) (156 salariés au total) (sous UTs : 16) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAF - Pilotage transverse DGE</b> (5 salariés directs) (29 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Pilotage de l'activité DGE</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Pilotage économique DGE</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Actuariat Assurance et Réassurance</b> (5 salariés directs) (52 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Comptabilité assurance et réassurance</b> (27 salariés directs) (27 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Actuariat et provisionnement</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Contrôle de gestion assurance</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Gest actif-passif analyses et compta fi</b> (3 salariés directs) (27 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Conso comptes - contrôles éco filiales - participations</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Comptabilité des Placements</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Gestion actif passif et études financières</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Comptabilité et contrôle de gestion FG</b> (2 salariés directs) (43 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Contrôle de Gestion des Frais Généraux</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Comptabilité des Filiales</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Comptabilité Fournisseurs et Générale</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Cellule Conseil et Assistance</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Immobilier et Moyens Généraux</b> (3 salariés directs) (183 salariés au total) (sous UTs : 45) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAF - Maintenance et entretien</b> (3 salariés directs) (48 salariés au total) (sous UTs : 8) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAF - Unité Services</b> (8 salariés directs) (29 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Espaces verts</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Polyvalent Services Equipe 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Polyvalent Services Equipe 2</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Equipe Propreté</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Equipe Accueil</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Gestion Immobilière Paris 7501</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Maintenance</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Travaux</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DAF - Gestion Immobilière Paris 7506</b> (7 salariés directs) (17 salariés au total) (sous UTs : 14) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Correspondant Immo Bretagne 1 D4501</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Aquitaine</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Bretagne R3501</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Corse PACA D1302</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Rhones Alpes D0101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Midi Pyrénées D6501</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Nord D6202</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Versailles D9502</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Paris CCS</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Boulogne sur Mer</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Bretagne 1 C4501</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Est D6801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Gestion Immobilière D2201</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Correspondant Immo Rhones Alpes E6902</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Cellule Etudes - Outils et Gestion</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DAF - Sûreté - Sécurité</b> (7 salariés directs) (16 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - PC sécurité (32 heures)</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Sûreté - Sécurité PCS</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Restaurant et logistique</b> (6 salariés directs) (75 salariés au total) (sous UTs : 12) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DAF - Logistique DAF</b> (17 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Economat - Logistique</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Cellule Evenementielle Déplacements</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Réception Expédition</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Cuisine</b> (24 salariés directs) (24 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DAF - Salle de Direction</b> (3 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Chauray - Restaurant</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Equipe bar</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Saladerie</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Restaurant d'Entreprise</b> (24 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Service</b> (24 salariés directs) (24 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Conciergerie</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DAF - Qualité Hygiène Sécurité Environnement</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DTASG - Transferts et appro</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Service Patrimoine d'exploitation</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAFS - Fiscalité et droit des affaires</b> (17 salariés au total) (sous UTs : 4) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DAF - Fiscalité</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DAF - Droit des affaires</b> (3 salariés directs) (13 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Affaires juridiques DAF</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Contrats et contentieux</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DAFS - Conseil auprès du DAF</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DAF - Achats</b> (7 salariés directs) (39 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Achats et Moyens Généraux</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Achats SI</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Approvisionnements</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DAF - Investissements et Placements</b> (1 salarié direct) (28 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DAF - Encadrement Investissements et Placements</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Gestion et analyses financières</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Gestion de taux</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Opérations financières</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DAF - Risk Management</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Direction Solutions et Systèmes d'information</b> (3 salariés directs) (649 salariés au total) (sous UTs : 60) (profondeur : 5)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSSI - Appui aux projets</b> (2 salariés directs) (141 salariés au total) (sous UTs : 15) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DSSI - Décisionnel</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSSI - MOA</b> (12 salariés directs) (76 salariés au total) (sous UTs : 6) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DSSI - MOA Relation et Développement</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSSI - MOA Sinistres</b> (14 salariés directs) (21 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Etudes et outils</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - MOA Contrats et traitements de masse</b> (25 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Accompagnement traitement de masse</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Procédures et Outils</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Ressources projets</b> (33 salariés directs) (40 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Méthodes</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Téléphonie</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Activités transverses projets</b> (5 salariés directs) (7 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Animation  du Portefeuille de Projets</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Déploiements et impacts utilisateurs</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Ariane</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Logistique et Système d'Information</b> (5 salariés directs) (433 salariés au total) (sous UTs : 35) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSSI - Logistique de l'Information</b> (7 salariés directs) (113 salariés au total) (sous UTs : 9) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSSI - Production documentaire</b> (14 salariés directs) (38 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSSI - Production Editique</b> (24 salariés directs) (24 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Administration gestion</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Production</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Traitement documentaire</b> (4 salariés directs) (68 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Courrier 1</b> (22 salariés directs) (22 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Courrier 2</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Archives</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Courrier 3</b> (22 salariés directs) (22 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Exploitation et Services</b> (5 salariés directs) (86 salariés au total) (sous UTs : 7) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Assistance et Services aux Utilisateurs</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Réseau Télécom Poste de travail</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Opérations</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Construction industrialisation</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Gestion des environnements</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Transverse Projet</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Pilotage VSI - Coordination Transverse</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Construction des solutions métiers</b> (8 salariés directs) (159 salariés au total) (sous UTs : 10) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSSI - CSM IARD</b> (63 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Projets solutions métiers IARD</b> (31 salariés directs) (31 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Gestion patrimoine applicatif IARD</b> (32 salariés directs) (32 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - CSM Relation et distribution des offres</b> (26 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Projets solution métiers RDO</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Gestion patrimoine applicatif RDO</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DSSI - CSM Fonctionnement de l'entreprise</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - CSM Décisionnel</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - CSM collaboratives et accès au poste de travail</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Relations métiers</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Sol Techniques Tests et Ingénieries</b> (8 salariés directs) (70 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Solutions pour DI</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Infrastructure Conseil et Support</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Middleware Conseil et Support</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Normes méthodes et support</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Test et Conformité des Solutions</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DSSI - Performance DDSI</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSSI - Sécurité et Management de la Data</b> (13 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Sécurité des SI</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Gouvernance Data</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Gestion des données personnelles</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSSI - Stratégie des SI et Technologie</b> (10 salariés directs) (43 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSSI - Urbanisme Système d'Information</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSSI - Architecture Système d'Information</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Direction Richesses Humaines</b> (5 salariés directs) (196 salariés au total) (sous UTs : 43) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>XX - Comité Entreprise</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Facilitateurs</b> (1 salarié direct) (57 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Assistance Richesses Humaines et Formation</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Solutions et Outils RH</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Gestion de la Paie et des Temps</b> (29 salariés directs) (29 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Admin RH - MOA SIRH - GTA</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Accompagnateurs</b> (2 salariés directs) (59 salariés au total) (sous UTs : 15) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>XX - Révélateurs des Richesses Humaines</b> (11 salariés directs) (27 salariés au total) (sous UTs : 8) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Révélateurs Richesses Humaines - Vienne</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines - Nancy</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines - Aix</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines  - Tours</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines - Rennes</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines - Toulouse</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines - Montpellier</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Révélateurs Richesses Humaines Paris</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>XX - Qualité de Vie au travail et Diversité</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Observatoire climat social et diversité</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Sourcing recrut. rel. écoles</b> (10 salariés directs) (11 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Sourcing recrut. rel. écoles Paris</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Carrières et Mobilités</b> (7 salariés directs) (8 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Carrières et Mobilités - Paris</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Transformateurs</b> (1 salarié direct) (30 salariés au total) (sous UTs : 9) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>XX - Accompagnement de la transformation culturelle</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Développement des Compétences</b> (14 salariés directs) (21 salariés au total) (sous UTs : 7) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Développement des Compétences - Rennes</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences - Lyon</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences - Perpignan</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences- Annecy</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences - Hyères</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences - Brest</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Développement des Compétences - Clermont</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Eclaireurs</b> (2 salariés directs) (17 salariés au total) (sous UTs : 5) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>XX - Relations Sociales</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Performance et Data RH</b> (7 salariés directs) (8 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Rémunération et Avantages Sociaux</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>XX - Prospectives métiers et compétences</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Diversité</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>XX - ADM</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Expérienceurs</b> (1 salarié direct) (14 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>XX - Communication RH</b> (5 salariés directs) (6 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Comunication RH Paris</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>XX - Parcours et Cycle de vie</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Maîtrise risques et Ctrl interne</b> (9 salariés directs) (16 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Contrôle Interne</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>XX - Audit Interne</b> (7 salariés directs) (15 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Pilotage audit</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Direction Relation Sociétaire</b> (5 salariés directs) (5271 salariés au total) (sous UTs : 780) (profondeur : 6)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Direction Pilotage de l'Activité Sinistres</b> (6 salariés directs) (2383 salariés au total) (sous UTs : 221) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Performance sinistres</b> (5 salariés directs) (7 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Performance sinistres R3701</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Performance sinistres D6001</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Besoins Sinistres et Accompagnement</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Filière Déclaration</b> (1 salarié direct) (644 salariés au total) (sous UTs : 39) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - SIN - CDS Rennes</b> (4 salariés directs) (56 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Rennes 3</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Rennes 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Rennes 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Lyon</b> (5 salariés directs) (83 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Lyon 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Lyon 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Lyon 3</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Lyon Génération</b> (31 salariés directs) (31 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Nantes soutien</b> (4 salariés directs) (58 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Nantes soutien 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Nantes soutien 3</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Nantes soutien 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Bessines</b> (5 salariés directs) (56 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Bessines 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Bessines 2</b> (24 salariés directs) (24 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Bessines 3</b> (27 salariés directs) (27 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Massy</b> (5 salariés directs) (80 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Massy 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Massy 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Massy 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Massy Génération</b> (28 salariés directs) (28 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Paris</b> (5 salariés directs) (65 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Paris 1</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Paris 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Paris 3</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Marseille</b> (5 salariés directs) (97 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Marseille 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Marseille 2</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Marseille 3</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Marseille Génération</b> (33 salariés directs) (33 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Montpellier</b> (5 salariés directs) (63 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Montpellier 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Montpellier 2</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Montpellier 3</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CDS Chauray Soutien</b> (1 salarié direct) (85 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CDS Chauray soutien 1</b> (59 salariés directs) (59 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS - Chauray Déclarations</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CDS Chauray soutien 2</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Affaires Graves et Inspection</b> (1 salarié direct) (86 salariés au total) (sous UTs : 31) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Affaires Graves Gestion</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Affaires Graves 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Affaires Graves 2</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Affaires Graves 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - SIN - Inspecteurs Régleurs</b> (3 salariés directs) (40 salariés au total) (sous UTs : 26) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Inspecteur Régleur - R5401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D6701</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - SIN - Inspecteurs Régleurs - Secteur Nord</b> (3 salariés directs) (14 salariés au total) (sous UTs : 11) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Inspecteur Régleur - S7901</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D2101</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - R3501</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - E6301</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - G3301 Nord</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - R6001</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D5903</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D7505 Nord</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - E6902 Nord</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D4901</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDSSA - Inspecteur Régleur - D7101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - Inspecteurs Régleurs - Secteur Sud</b> (2 salariés directs) (16 salariés au total) (sous UTs : 8) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Inspecteur Régleur - D3802</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - R3101 Sud</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Inspecteur Régleur - R1301 Sud</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - N0601</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - N3401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - E6902 Sud</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - G3301</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - G3301 Sud</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - D7505</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Inspecteur Régleur - R3101</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Inspecteur Régleur - R1301</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Filière Gestion Généraliste</b> (1 salarié direct) (728 salariés au total) (sous UTs : 62) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - SIN - CGG Grenoble</b> (2 salariés directs) (26 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Grenoble 1</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Grenoble 2</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Rennes</b> (3 salariés directs) (54 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Rennes 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Rennes 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Rennes 3</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Bordeaux</b> (3 salariés directs) (63 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Bordeaux 1</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Bordeaux 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Bordeaux 3</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Atlantique</b> (2 salariés directs) (51 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Atlantique 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Atlantique 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Atlantique 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Venise Verte</b> (4 salariés directs) (48 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Venise Verte 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Venise Verte 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Venise Verte 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Malakoff-Versailles</b> (3 salariés directs) (73 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Malakoff 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Malakoff 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Malakoff Versailles 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Malakoff Versailles 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Nancy</b> (3 salariés directs) (52 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Nancy 1</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Nancy 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Nancy 3</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - Entité sinistres Réunion</b> (1 salarié direct) (22 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Entité sinistres Réunion Généraliste</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Entité sinistres Réunion Expert</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - Entité sinistres Martinique</b> (2 salariés directs) (20 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Entité sinistres Martinique Généraliste</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Entité sinistres Martinique Expert</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - Entité sinistres Guadeloupe</b> (22 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Entité sinistres Guadeloupe Généraliste</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Entité sinistres Guadeloupe Expert</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Aix</b> (3 salariés directs) (86 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Aix 1</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Aix 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Aix 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Aix soutien</b> (30 salariés directs) (30 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Compiègne-Lille</b> (1 salarié direct) (70 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Compiègne 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Compiègne 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Compiègne Animateur Technique</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Compiègne Lille 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Compiègne Lille 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Toulouse</b> (3 salariés directs) (65 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Toulouse 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Toulouse 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Toulouse 3</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Toulouse 4</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Tours</b> (3 salariés directs) (51 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Tours 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Tours 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Tours 3</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Filière Gestion Généraliste S7901</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - SIN - CGG Vienne</b> (2 salariés directs) (23 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGG Vienne 1</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Vienne 2</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGG Vienne Animateur Technique</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Filière Gestion Expert</b> (1 salarié direct) (904 salariés au total) (sous UTs : 81) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - SIN - CGE Aix-en-Provence</b> (1 salarié direct) (78 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Aix - Pôle Logistique</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Aix - Corpo 1</b> (22 salariés directs) (22 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Aix - Corpo 2</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Aix - Mat PJ 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Aix - Mat PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Versailles</b> (1 salarié direct) (70 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Versailles - Pôle Logistique</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Versailles - Corpo 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Versailles - Corpo 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Versailles - Mat PJ 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Versailles - Mat PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Rennes</b> (3 salariés directs) (66 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Rennes - Pôle Logistique</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Rennes - Corpo 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Rennes - Corpo 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Rennes - Mat PJ 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Rennes - MAT PJ 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Toulouse</b> (5 salariés directs) (71 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Toulouse - Pôle Logistique</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Toulouse - Corpo 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Toulouse - Corpo 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Toulouse - Mat PJ 1</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Toulouse - Mat PJ 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Tours</b> (1 salarié direct) (73 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Tours - Pôle Logistique</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Tours - Corpo 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Tours - Corpo 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Tours - Mat PJ 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Tours - Mat PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Malakoff</b> (1 salarié direct) (67 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Malakoff - Pôle Logistique</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Malakoff - Corpo 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Malakoff - Corpo 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Malakoff - Mat PJ 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Malakoff - Mat PJ 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Compiègne</b> (1 salarié direct) (65 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Compiègne - Pôle Logistique</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Compiègne - Corpo 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Compiègne - Corpo 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Compiègne - Mat PJ 1</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Compiègne - Mat PJ 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Nancy</b> (5 salariés directs) (63 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Nancy - Corpo 1</b> (29 salariés directs) (29 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Nancy - Corpo 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Nancy - Mat PJ 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Nancy - Mat PJ 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - Sinistres Internationaux</b> (10 salariés directs) (43 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Sinistres Internationaux Secteur 1</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Sinistres Internationaux Secteur 2</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Sinistres Internationaux Secteur 3</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Sinistres Internationaux Secteur 4</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Filière Gestion Expert S7901</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Vienne</b> (1 salarié direct) (73 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Vienne - Pôle Logistique</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Vienne - Corpo 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Vienne - Corpo 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Vienne - Mat PJ 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Vienne - Mat PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Vienne - Corpo 3</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Bessines</b> (4 salariés directs) (81 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Bessines MAT PJ 1</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Bessines MAT PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Bessines CORPO 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Bessines CORPO 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Bessines CORPO 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Bessines CORPO 4</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE Chauray</b> (4 salariés directs) (65 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - CGE Chauray MAT PJ 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Chauray MAT PJ 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Chauray MAT PJ 3</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Chauray CORPO 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Chauray CORPO 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - CGE Chauray CORPO 3</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE CDR</b> (58 salariés au total) (sous UTs : 4) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - SIN - Déclaration Régulation Rennes</b> (1 salarié direct) (29 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Déclaration Régulation mat PJ Rennes</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - SIN - Déclaration Régulation Corpo Rennes</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - SIN - Déclaration Régulation Corpo Chauray</b> (29 salariés directs) (29 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - SIN - CGE CDR</b> (1 salarié direct) (28 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - SIN - Déclaration Régulation mat PJ Chauray</b> (27 salariés directs) (27 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Technique assurance</b> (3 salariés directs) (285 salariés au total) (sous UTs : 80) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Réseaux des Prestataires</b> (3 salariés directs) (122 salariés au total) (sous UTs : 60) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DRSOC - Réseau des Auxiliaires de Justice</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Service Médical</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Pôle Risques divers</b> (2 salariés directs) (47 salariés au total) (sous UTs : 25) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Activité EAD DAB et Vol</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert national Risques Divers R3101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Activité ESP DAB et Vol</b> (1 salarié direct) (22 salariés au total) (sous UTs : 10) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Expert régional Risques Divers R1301</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert Regional Risques Divers R3501</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert Regional Risques Divers R9201</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert régional Risques Divers R5401</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert Regional Risques Divers S7901</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animation Prestataires R3101</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Activité Vol S7901</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Experts salariés G3301</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert Regional Risques Divers D5903</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - - Service Expert Régional - E6902</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Activités transverses Risques divers</b> (2 salariés directs) (18 salariés au total) (sous UTs : 11) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Technicien consultant R3801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Technicien Consultant UC1 S7901</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Technicien consultant D0401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Experts Salariés N3401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Experts Salariés N0601</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Experts Salariés R9201</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Réseau d'entreprises partenaires R9201</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Technicien consultant UC2 R9201</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Activité Vol R9201</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Experts Salariés L3401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Réseau d'entreprises partenaires R3101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Pôle Auto</b> (1 salarié direct) (67 salariés au total) (sous UTs : 31) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - SGAVIR 1</b> (6 salariés directs) (15 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - SGAVIR Vienne</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - SGAVIR Compiègne</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - SGAVIR Versailles</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - SGAVIR Aix</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - SGAVIR Lille</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - SGAVIR Saint Brieuc</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Entité Conseil Auto Animation Réseau 1</b> (1 salarié direct) (17 salariés au total) (sous UTs : 8) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Coord. réseau prestataires Rennes</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Soutien Technique Aix</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Marseille</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Soutien Technique Niort</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Bordeaux</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Expert National</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. Réseau prestataires Niort</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Grands Comptes Vienne</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - SGAVIR 2</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Grands Comptes Niort</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Pôle auto R3101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Entité Conseil Auto Animation Réseau 2</b> (1 salarié direct) (17 salariés au total) (sous UTs : 10) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Coord. réseau prestataires Versailles</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Toulouse</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Soutien Technique Vienne</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Compiegne</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Nancy</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assist. Pôle Grands Comptes et Soutien Tech. Nancy</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. réseau prestataires Villeneuve Ascq</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle Soutien Technique Malakoff R9201</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Pôle grands comptes Toulouse</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Coord. Réseau prestataires Vienne</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Animation des Prestataires 2</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - AGIR et Relations extérieures</b> (18 salariés directs) (31 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Assurances Garanties Infos et Règles 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assurances Garanties Infos et Règles 1</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assurances Garanties Infos et Règles 3</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Lutte anti-fraude et anti-blanchiment</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Dommage corporel</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Support technique</b> (2 salariés directs) (120 salariés au total) (sous UTs : 11) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Contrats</b> (8 salariés directs) (65 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Satellite PCO</b> (23 salariés directs) (23 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Planète SPE</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Planète SaTune</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Conventions</b> (3 salariés directs) (32 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Mise en oeuvre circuit IDA</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Procédures conventionnelles 1</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Procédures conventionnelles 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Soutien technique sinistres</b> (20 salariés directs) (21 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Centre 31 - Soutien Technique</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien technique - D7505</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DRSOC - Programme de rénovation SI IARD</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Direction Distribution</b> (5 salariés directs) (2519 salariés au total) (sous UTs : 463) (profondeur : 5)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Filière Conseil Vente en face à face</b> (3 salariés directs) (1361 salariés au total) (sous UTs : 351) (profondeur : 4)</span>
+<ul class="nested">
+<li><b>DDORS - Animation Réseau - Personnel hors Siège</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Région Rhones-Alpes 3810</b> (3 salariés directs) (139 salariés au total) (sous UTs : 38) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Zone Accueil Saint Etienne 4210</b> (1 salarié direct) (15 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Saint Etienne 4210</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de Prospection Rhônes Alpes DC 4210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Lyon 6930</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Lyon Gerland 6930</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Francheville 6940</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Viriat Bourg en Bresse</b> (1 salarié direct) (10 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Viriat 01.1 Back</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Bourg en Bresse 0110</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones accueil Annemasse Annecy 7420</b> (1 salarié direct) (16 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Annemasse 7410</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Annecy 7420</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones accueil Grenoble 1</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Grenoble 3890</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Eybens 3820</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones accueil Grenoble 2</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Seyssinet 3810</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Gières 3830</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Le Teil 0710</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones accueil Valence 26</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Valence 26.6 Back</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Valence 2610</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de supervision Rhônes Alpes DC 7310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Rhônes Alpes DC 3810</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Rhônes Alpes DC 3810</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Rhône-Alpes Viriat 0110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Chambery 7310</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller mobile Rhones-Alpes 6920</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones accueil Lyon 1</b> (1 salarié direct) (16 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point D Accueil Lyon 6990</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Villeurbanne 6920</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Lyon Quais de Saone 6910</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - CVS Région Rhônes-Alpes - Quai de Saône 6910</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Rhônes-Alpes - Francheville 6940</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Rhones-Alpes D6930</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Rhones-Alpes D3820</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Soutien contrats et coordination technique D6903</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Rhônes-Alpes - Eybens 3820</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Managers</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Sinistres en attente</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Polyvalent et contrats en attente</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Région Centre Normandie 3710</b> (2 salariés directs) (118 salariés au total) (sous UTs : 22) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Chateauroux 3610</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Gueret 2310</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Alençon 6110</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Rouen 7610</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Bourges 1810</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Blois 4110</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Le Havre 7620</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Carentan 5010</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Evreux 2710</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Herouville 1410</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Centre Normandie  - Chartres 2810</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Centre Normandie - Tours 3710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Tours 3710</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Chartres 2810</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Orléans 4510</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Centre Normandie - Caen 1410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Centre Normandie - Bourges 1810</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Région Centre Normandie - Rouen 7610</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique - Rouen 7610</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Centre Normandie  - Caen 1410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Région Centre Normandie - Tours 3710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Chargé de supervision Centre Normandie - R3701</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Bourgogne 2110</b> (1 salarié direct) (100 salariés au total) (sous UTs : 26) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Nevers 5810</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Besançon 2510</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Lons Le Saunier 3910</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Chalon-sur-Saone 7110</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Vesoul 7010</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Auxerre 8910</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Bourgogne - Dijon 2110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Dijon 2110</b> (1 salarié direct) (11 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Dijon 2110</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Assistanat Région Bourgogne Belfort 9010</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Réunion 9741</b> (30 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Saint Paul La Réunion 9790</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Denis 9740</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Pierre 97D</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial ECV Réunion - Saint Pierre 97D</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Pierre 97D</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Vente St André 9760</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de prospection Bourgogne - Belfort 9010</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Belfort Montbeliard 2520</b> (8 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Montbeliard 2520</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Belfort 9010</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Animateur commercial Bourgogne - Dijon 2110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Bourgogne - Dijon 2110</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Bourgogne - Besancon 2510</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS  Région Bourgogne - Dijon 2110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique D2510</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Nord 5910</b> (2 salariés directs) (129 salariés au total) (sous UTs : 28) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Amiens 8010</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Ste Catherine Les Arras 6210</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Valenciennes 5920</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Laon 0210</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Nord - Lille 5910</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Nord - Creil 6010</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Lens 6230</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Creil 6010</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Antilles 9720</b> (35 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Fort de France 9720</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Pointe à Pitre 9710</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Zones Accueil Antilles 9710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Moulins Dunkerque 5910</b> (1 salarié direct) (15 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Lille 5910</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Lambersart 5940</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Villeneuve Lambersart 5920</b> (1 salarié direct) (10 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Villeneuve d'Ascq 5930</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Boulogne Calais 6210</b> (1 salarié direct) (13 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Calais 6290</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Point d'Accueil Dunkerque 5990</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Boulogne sur Mer 6220</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - CVS Région Nord - Villeneuve d'Ascq 5930</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Contrôle et Administration  Valenciennes 5920</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Nord - Lille 5910</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Nord - Villeneuve d'Ascq 5930</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Nord - Lille 5910</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique D6210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Nord -Ste Catherine Les Arras 6210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Paris 7510</b> (2 salariés directs) (90 salariés au total) (sous UTs : 28) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Cesson 7710</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Meaux 7720</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision - Porte de Vanves 7550</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Créteil Villiers sur Marne 9410</b> (1 salarié direct) (13 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Créteil 9410</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Villiers sur Marne 9430</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Rennes Magenta Saint Cloud 7530</b> (1 salarié direct) (10 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Paris Rue Rennes 7560</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Paris Voltaire 7540</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Corvisart Kremlin Bicetre 7520</b> (1 salarié direct) (11 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Paris Corvisart 7530</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Kremlin Bicetre 9420</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Bondy Montreuil 9310</b> (2 salariés directs) (16 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Bondy 9310</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Point d''Accueil Montreuil 9320</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Montreuil 9320</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Animateur commercial Paris - Porte de Vanves 7550</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Paris - Porte de Vanves 7550</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Paris - Corvisart 7530</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Paris - Voltaire 7520</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS - Région Paris - Rue de Rennes</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Voltaire Chateaudun 7550</b> (1 salarié direct) (9 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Paris Magenta 7590</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Paris Chateaudun 7520</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Conseiller Mobile - Région Paris - Créteil</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile - Région Paris - Paris Corvisart</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Paris - Chateaudun 7540</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CVS - Région Paris - Montreuil</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - Support Face à face</b> (8 salariés directs) (19 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - Animation Réseau - Personnel extérieur</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Pôle prospection</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Pôle fidélisation</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Accompagnement Commercial D7505</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Accompagnement commercial 1</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Conseil Vente à distance</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Filière sinistres</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Région Atlantique 3320</b> (1 salarié direct) (120 salariés au total) (sous UTs : 27) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Angoulème 1610</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Pau 6410</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil La Rochelle 1710</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Perigueux 2410</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Agen 4710</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Poitiers 8610</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Mont de Marsan 4010</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Bayonne 6420</b> (7 salariés directs) (16 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Bayonne 6420</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Bordeaux 3310</b> (1 salarié direct) (8 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Gradignan 3330</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de prospection Atlantique - Gradignan 3330</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Bordeaux 3320</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Bordeaux Cours d'Albret 3320</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Point d'Accueil Bordeaux Cours d'Albret 3320</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Merignac 3310</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Atlantique Bayonne 6420</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Niort 7910</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Référent technique sinistres - Angoulème 1610</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Atlantique - Mérignac 3310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Atlantique - La Rochelle 1710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Atlantique - Gradignan 3330</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Atlantique - Angoulème 1610</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Atlantique - Niort 7910</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Poitiers 8610</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Atlantique DC8610</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Atlantique - Merignac 3310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Versailles 7810</b> (1 salarié direct) (80 salariés au total) (sous UTs : 27) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Chargé de prospection Versailles - Porte de Vanves 7550</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Evry Arpajon 9110</b> (1 salarié direct) (14 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Arpajon 9130</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Evry Courcouronnes 9110</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Orsay Antony 9120</b> (1 salarié direct) (13 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Orsay 9120</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Antony 9240</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Animateur commercial Versailles - R7810</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Chargé de supervision Versailles - R7810</b> (1 salarié direct) (2 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Assistanat Région Versailles - R7810</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Versailles Montigny le Bretonneux 7810</b> (1 salarié direct) (7 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Montigny le Bretonneux 7830</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Boulogne Issy les Moulineaux 7510</b> (1 salarié direct) (8 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Issy les Moulineaux 9290</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Boulogne Billancourt 9230</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Conseiller mobile Versailles - Antony 9240</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Nanterre Saint Germain 7820</b> (1 salarié direct) (12 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Nanterre 9220</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Germain en Laye 7820</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Cergy Domont 9510</b> (1 salarié direct) (14 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Domont 9520</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Cergy 9510</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - CVS Région Versailles - Antony 9240</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Versailles - Evry Courcouronnes 9110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Versailles - Boulogne Billancourt 9230</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Versailles - Nanterre 9220</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Versailles - Arpajon 9110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Languedoc Auvergne 3420</b> (1 salarié direct) (91 salariés au total) (sous UTs : 24) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Mende 4810</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Aurillac 1510</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Le Puy en Velay 4310</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Perpignan 6610</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Beziers 3410</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Délégation Conseil Nimes 3010</b> (12 salariés directs) (13 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Secteur Sinistres</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Moulins 0310</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Languedoc - St Etienne 4210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Clermont Ferrand 6310</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Languedoc - Moulins 0310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Carcassonne 1110</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Languedoc - Beziers 3410</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de Prospection Languedoc - Beziers 3410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Montpellier Val de Croze 3410</b> (16 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Montpellier Triangle 3420</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Montpellier Richter 3430</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Animateur commercial Auvergne - Clermont Ferrand 6310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Languedoc - Montpellier Richter 3430</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Languedoc - Clermont Ferrand 6310</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Languedoc - Richter 3430</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Languedoc - Clermont 6310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Languedoc - Nimes 3010</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique - CDS34</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Bretagne 3510</b> (1 salarié direct) (123 salariés au total) (sous UTs : 30) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Laval 5310</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Brest 2910</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Quimper 2920</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Brieuc 2210</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Angers 4910</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Le Mans 7210</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Lorient 5610</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil La Roche sur Yon 8510</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Bretagne -Saint Brieuc 2210</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Nantes 4410</b> (1 salarié direct) (14 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Saint Herblain 4410</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Délégation Conseil Nantes Talensac 4420</b> (5 salariés directs) (6 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Conseiller Mobile Région Bretagne - Nantes Talensac</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Vannes 5620</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Nazaire 4430</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Rennes 3510</b> (13 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Rennes Joffre 3510</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Délégation Conseil Rennes Sextant 3520</b> (6 salariés directs) (7 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Conseiller Mobile Région Bretagne - Rennes Sextant</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de prospection Bretagne - Nantes St Herblain 4410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Bretagne - Rennes Sextant 3520</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique - Le Mans 7210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Bretagne - Villiers sur Marne 9430</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Bretagne - Nantes St Herblain 4410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Bretagne - Rennes Sextant 3520</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Bretagne - Rennes Sextant 3520</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Bretagne - Rennes Sextant 3520</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Bretagne - La Roche sur Yon 8510</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Bretagne - Nantes Talensac 4420</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>D5601 - Délégation Conseil Lorient 5610</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Est 5410</b> (1 salarié direct) (101 salariés au total) (sous UTs : 24) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Verdun 5510</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Mulhouse 6810</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Epinal 8810</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Charleville Mezières 0810</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Est - Villiers les Nancy 5410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Est - Metz 5710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Est - Villiers les Nancy 5410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Est - D6810</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Villiers les Nancy 5410</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Metz 5710</b> (1 salarié direct) (11 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Thionville 5790</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Metz 5710</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Reims 5110</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Chaumont 5210</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Strasbourg 6710</b> (1 salarié direct) (15 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Strasbourg Halles 6710</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Strasbourg Etoile 6720</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - CVS Région Est - Strasbourg Etoile 6720</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Est - Reims 5110</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Est - Villiers les Nancy 5410</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Est - Villiers les Nancy 5410</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique D6801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Nord-Est - Reims 5110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Troyes 1010</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Midi Pyrénées 3140</b> (1 salarié direct) (108 salariés au total) (sous UTs : 25) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Délégation Conseil Figeac 4610</b> (6 salariés directs) (9 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Cahors 4690</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Délégation Conseil Foix 0910</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Auch 3210</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Limoges 8710</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Tarbes 6510</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Albi 8110</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Ramonville Saint Agne 3120</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Tulle 1910</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Montauban 8210</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Région Midi-Pyrénées - Limoges 8710</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zones Accueil Toulouse 3120</b> (1 salarié direct) (15 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Toulouse 3110</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Blagnac 3130</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Toulouse Lorraine 3110</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Soutien contrats et coordination technique - Tulle 1910</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de prospection Midi Pyrénées - Blagnac 3130</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Midi-Pyrénées - Blagnac 3130</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Brive 1920</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Midi-Pyrénées - Ramonville Saint Agne 3120</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Midi - Pyrénées - DC 3120</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Rodez 1210</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Midi-Pyrénées - Rodez 1210</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique Albi 8110</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Midi-Pyrénées - Ramonville 3120</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Région Paca Corse 1340</b> (1 salarié direct) (139 salariés au total) (sous UTs : 28) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Manosque 0410</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Gap 0510</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Vitrolles 1340</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Hyères 8320</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Toulon 8310</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Avignon 8410</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Le Cannet 0620</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Délégation Conseil Ajaccio 2010</b> (11 salariés directs) (16 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Point d'Accueil Bastia 2090</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Chargé de prospection Corse PACA - R1301</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de supervision Corse PACA - Toulon 8310</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Corse PACA - Pont de Vivaux 1320</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DRSOC - Zone accueil Nice 0610</b> (1 salarié direct) (14 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Nice Acropolis 0630</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Saint Laurent du Var 0610</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Zone accueil Marseille 1310</b> (2 salariés directs) (16 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Délégation Conseil Marseille Pont de Vivaux 1320</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Marseille Prado 1310</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Chargé de prospection Corse PACA - Nice Acropolis 0630</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Délégation Conseil Aix en Provence 1330</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Assistanat Corse PACA - CCS Nice</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Corse PACA - Le Cannet 0620</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS Région Corse PACA - Aix en Provence 1330</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Chargé de Prospection Corse PACA - Hyères 8320</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Conseiller Mobile Région Corse PACA - Pont de Vivaux 1320</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Soutien contrats et coordination technique Le Cannet 0620</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - CVS - Région Corse PACA - Pont de Vivaux 1320</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Animateur commercial Corse PACA - D0603</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Filière Conseil Vente à Distance</b> (3 salariés directs) (1114 salariés au total) (sous UTs : 104) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - CATS Nancy</b> (5 salariés directs) (59 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Nancy 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Nancy 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Nancy 3</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Nancy 4</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS Toulouse</b> (2 salariés directs) (70 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATSToulouse 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Toulouse 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Toulouse 3</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Toulouse 4</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS Lyon</b> (3 salariés directs) (50 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Lyon 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Lyon 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Lyon 3</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Lyon 4</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS St-Brieuc</b> (2 salariés directs) (54 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS St-Brieuc 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS St_Brieuc 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS St-Brieuc 3</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Animateur commercial CATS St Brieuc</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS Marseille</b> (3 salariés directs) (61 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Marseille 1</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Marseille 2</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Marseille 3</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - Support métiers relation à distance</b> (7 salariés directs) (34 salariés au total) (sous UTs : 4) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - CCS Grenoble</b> (1 salarié direct) (26 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Grenoble 1</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Grenoble 2</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Support CVD CGE Versailles</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Lyon</b> (1 salarié direct) (34 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Lyon 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Lyon 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Lyon Animateur commercial</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Lyon 3</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Bordeaux</b> (1 salarié direct) (64 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Bordeaux 1</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Bordeaux 2</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Bordeaux 3</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Bordeaux Animateur commercial</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Lille</b> (2 salariés directs) (51 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Lille 1</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Lille 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Lille 3</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Clermont</b> (3 salariés directs) (38 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Clermont 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Clermont 2</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Clermont 3</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Clermont 4</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Massy</b> (3 salariés directs) (46 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Massy 1</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Massy 2</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Massy 3</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Paris</b> (3 salariés directs) (74 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Paris 1</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Paris 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Paris 3</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Paris CQP</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Paris 4</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Paris 5</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Référent technique</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - CCS Montpellier</b> (3 salariés directs) (51 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Montpellier 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Montpellier 2</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Montpellier 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Aix</b> (3 salariés directs) (36 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Aix 1</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Aix 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS Paris</b> (0 salarié au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Paris 1</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Paris 2</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Paris 3</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Nice</b> (3 salariés directs) (45 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Nice 1</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Nice 2</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Nice 3</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Reims</b> (2 salariés directs) (35 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Reims 1</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Reims 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CCS Strasbourg</b> (4 salariés directs) (43 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CCS Strasbourg 1</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CCS Strasbourg 2</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - Centre contractuel</b> (4 salariés directs) (112 salariés au total) (sous UTs : 7) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - Centre contractuel 1</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Centre contractuel 3</b> (23 salariés directs) (23 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Plateau LDD Chauray</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Centre contractuel 2</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Centre contractuel 4</b> (22 salariés directs) (22 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Plateau CDD CVD 1</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Plateau CDD CVD 2</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Support CVD DC Antony</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Digiteam</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Référent technique E6901</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - Campus CVD Poitiers</b> (3 salariés directs) (25 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - Campus CVD Poitiers 1</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - Campus CVD Poitiers 2</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - Incubateur</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - CATS Chauray</b> (3 salariés directs) (54 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Chauray 1</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Chauray 2</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Chauray 3</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - CATS Angers</b> (3 salariés directs) (63 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - CATS Angers 1</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Angers 2</b> (21 salariés directs) (21 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - CATS Angers 3</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Soutien</b> (1 salarié direct) (15 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Responsable Activité Soutien Multisites</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Développement Commercial</b> (22 salariés directs) (23 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Développement commercial D30.01</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Développement commercial D81.01</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Juridique Distribution</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Pilotage et animation transverse</b> (2 salariés directs) (56 salariés au total) (sous UTs : 9) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DRSOC - Accompagnement des Acteurs du Réseau</b> (9 salariés directs) (12 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Accompagnement des Acteurs Hors Siège</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Accompagnement des Acteurs du Réseau N3301</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - Accompagnement des Acteurs du Réseau C3502</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Support au Pilotage des Réseaux et de l'Activité</b> (28 salariés directs) (29 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Support pilotage Flux D7701</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - XPLAB</b> (12 salariés directs) (13 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Laboratoire Relation Sociétaire</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DRSOC - XPLAB CCS 91</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DRSOC - Excellence opérationnelle et satisfaction sociétaire</b> (11 salariés directs) (12 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DRSOC - Excellence opérationnelle et satisfaction sociétaire R7801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DRSOC - Laboratoire Digiteam</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>XX - T'CAP</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Conseiller à la Direction - Rue de Seine</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>2DAP - Direction Assurances de Personnes - Data et Actuariat Produit</b> (4 salariés directs) (78 salariés au total) (sous UTs : 14) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>2DAP - Direction Pilotage Tarification et Décisionnel</b> (2 salariés directs) (72 salariés au total) (sous UTs : 12) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>2DAP - Tarification</b> (3 salariés directs) (25 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>2DAP - Classification</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>2DAP - Tarification - Etudes statistiques</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>2DAP - Actuariat produit</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>2DAP - Pilotage de la Performance</b> (11 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>2DAP - Dialogue de performance</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>2DAP - Ciblage et performance des actions</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>2DAP - Décisionnel</b> (2 salariés directs) (34 salariés au total) (sous UTs : 4) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>2DAP - Requêtes et tableaux de bord</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>2DAP - Administration des données</b> (1 salarié direct) (16 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>2DAP - Administration données Tarification</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>2DAP - Administration données Décisionnel</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>2DAP - Conseil</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DB2B - Direction B2B</b> (4 salariés directs) (517 salariés au total) (sous UTs : 60) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DB2B - Direction Solutions Collectives</b> (6 salariés directs) (496 salariés au total) (sous UTs : 56) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DB2B - Domaine Expérience Collaborateur Solutions Collectives</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DB2B - Domaine Expérience Client Solutions Collectives</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DB2B - Directeur adjoint - responsable de la filière AC</b> (3 salariés directs) (457 salariés au total) (sous UTs : 52) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DDORS - A et C - CGS Niort</b> (7 salariés directs) (52 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - CGS Niort 1</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Niort 2</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Niort 3</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - CGS Aix</b> (6 salariés directs) (52 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - CGS Aix 1</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Aix 2</b> (19 salariés directs) (19 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Aix 3</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DDORS - A et C - Construction</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DDORS - A et C - CGS Nancy</b> (9 salariés directs) (47 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - CGS Nancy 1</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Nancy 2</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS Nancy 3</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - Pôles Zone Lyon</b> (1 salarié direct) (62 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - Pôle Lyon</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Grenoble</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Metz</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Dijon</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Clermont</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - Pôles Zone Paris</b> (2 salariés directs) (70 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - Pôle Caen</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Créteil</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Paris Corvisart</b> (14 salariés directs) (14 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Lille</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Montigny le Bretonneux</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - Pôles Zone Toulouse</b> (1 salarié direct) (69 salariés au total) (sous UTs : 4) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - Pôle Bordeaux</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Nantes</b> (20 salariés directs) (20 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Marseille</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Pôle Toulouse</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - SAR Paris</b> (8 salariés directs) (10 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - SAR Aix</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - CGS VAM</b> (1 salarié direct) (38 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - CGS VAM Contrats</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS VAM Sinistres Généralistes</b> (18 salariés directs) (18 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - CGS VAM Sinistres Experts</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - CGS Collectivités Territoriales</b> (7 salariés directs) (24 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - Gestion Collectivités Territoriales</b> (17 salariés directs) (17 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DDORS - A et C - Développement</b> (1 salarié direct) (16 salariés au total) (sous UTs : 13) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DDORS - A et C - Développement S7901</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 64</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 35</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 69</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 13</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 75</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 34</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 54</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 59</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 14</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 7505</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC S7901</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DDORS - A et C - Chargé de relations AC 33</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DB2B - Domaine Pilotage de la Performance Solutions Collectives</b> (8 salariés directs) (8 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DB2B - Développement et Partenariats</b> (9 salariés directs) (11 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DB2B - Maif Start Up Club</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DB2B - Stratégie et développement Sport</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Direction de la Stratégie de la Marque et des Offres</b> (2 salariés directs) (380 salariés au total) (sous UTs : 69) (profondeur : 4)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSMO - Secrétariat Général</b> (4 salariés directs) (62 salariés au total) (sous UTs : 20) (profondeur : 3)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSMO - Accompagnement des dirigeants instances</b> (2 salariés directs) (5 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Unité soutien transverse</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DSMO - Conseil juridique</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Accompagnement des Mandataires du CA</b> (18 salariés directs) (31 salariés au total) (sous UTs : 13) (profondeur : 2)</span>
+<ul class="nested">
+<li><span class="caret"><b>DSMO - Appui aux mandataires D7702</b> (1 salarié direct) (13 salariés au total) (sous UTs : 12) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Appui aux mandataires R4401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D2601</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D7702</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D7602</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D8201</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D8302</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D2501</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D6801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires CCS33</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires D6101</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires N3401</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Appui aux mandataires R7801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DSMO - Archives Information interne et Veille stratégique</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Gestion des Instances et Budgets</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Vie démocratique et accompagnement des Délégués Elus des Soc.</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><b>DSMO - Conseil-Soutien</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Direction Digital - Expérience - Innovation</b> (2 salariés directs) (89 salariés au total) (sous UTs : 17) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DSMO - Digital Niort</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Digital Factory</b> (4 salariés directs) (50 salariés au total) (sous UTs : 5) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Digital analyse</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Tech</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Design</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Canal</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Product</b> (11 salariés directs) (11 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Responsable  MSC Le Lieu</b> (1 salarié direct) (14 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DSMO - Responsable de programmation + Chef d'Exploitation</b> (7 salariés directs) (7 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Animateur commercial - Manager</b> (1 salarié direct) (6 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Conseillers</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Expérience</b> (6 salariés directs) (7 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - UX</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - UX -  Rue de Seine</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Pôle Innovation</b> (8 salariés directs) (11 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Hub</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Hub - Rue de Seine</b> (3 salariés directs) (3 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DSMO - International</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Affaires Publiques - Rue de Seine</b> (2 salariés directs) (2 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Affaires Publiques</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Direction Communication</b> (2 salariés directs) (131 salariés au total) (sous UTs : 18) (profondeur : 3)</span>
+<ul class="nested">
+<li><b>DSMO - Communication développement</b> (15 salariés directs) (15 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Stratégie accomp et com interne</b> (1 salarié direct) (16 salariés au total) (sous UTs : 3) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DSMO - Média interne</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Accompagnement et Conseil</b> (8 salariés directs) (9 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Accompagnement et Conseil R7801</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>DSMO - Conception campagnes et actions</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Actions sociétales et comm instit</b> (4 salariés directs) (52 salariés au total) (sous UTs : 7) (profondeur : 2)</span>
+<ul class="nested">
+<li><b>DSMO - Actions mutualistes</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Relations Presse et e-réputation</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Responsabilité sociétale de l'entreprise</b> (9 salariés directs) (9 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Partenariats Images Sponsoring et Mécénat</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Pôle éditorial</b> (5 salariés directs) (5 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>DSMO - Communication Médias Sociaux</b> (7 salariés directs) (7 salariés au total) (sous UTs : 1) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Communication institutionnelle NDC</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Studio Création</b> (4 salariés directs) (33 salariés au total) (sous UTs : 3) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Audiovisuel et multimédia</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Graphique</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Etudes et moyens de gestion</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="caret"><b>DSMO - Direction Marketing</b> (7 salariés directs) (89 salariés au total) (sous UTs : 6) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>DSMO - Veille et prospective stratégique</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Etudes Marketing et Statistiques</b> (13 salariés directs) (13 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Offres et Services IARD</b> (16 salariés directs) (16 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Parcours et concepts marketing</b> (12 salariés directs) (12 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Offres AP et Services financiers</b> (24 salariés directs) (24 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>DSMO - Projets stratégiques</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>XX - Prem</b> (1 salarié direct) (1 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PE Réseau</b> (0 salarié au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PE Centres de gestions</b> (23 salariés directs) (23 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PE Siège</b> (22 salariés directs) (22 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PREM Centres</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PE Réseau</b> (59 salariés directs) (59 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - PREM Réseau</b> (4 salariés directs) (4 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Fondation MAIF</b> (6 salariés directs) (6 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Service Prévention MAIF</b> (10 salariés directs) (10 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><span class="caret"><b>XX - Filia</b> (4 salariés au total) (sous UTs : 2) (profondeur : 1)</span>
+<ul class="nested">
+<li><b>XX - Filia Maif</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+<li><b>XX - Filia Maif - Gestion des Risques</b> (2 salariés directs) (2 salariés au total) (sous UTs : 0) (profondeur : 0)</li>
+</ul>
+</li>
+</ul>
+
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+</body>
+</html>
