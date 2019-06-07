@@ -6,8 +6,11 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-public abstract class ObjectModel {
+public abstract class ObjectWithUtParent {
+
     @Getter
     @Setter
-    private List<UtParent> utParents = new ArrayList<>();
+    private List<ParentLink> utParentLinks = new ArrayList<>();
+
+
 }

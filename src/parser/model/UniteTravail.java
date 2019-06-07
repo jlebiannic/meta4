@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UniteTravail extends ObjectModel {
+public class UniteTravail extends ObjectWithUtParent {
     //	<UniteTravail codeUT="0020" datedebut="1999-09-01" dateFin="4000-01-01" libelle="XX - Direction" codeSociete="001" codeEtablissement="S7901">
 	private String codeUT;
 	private String dateDebut;

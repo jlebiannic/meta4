@@ -22,11 +22,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import parser.model.Entite;
 import parser.model.Groupe;
-import parser.model.ObjectModel;
+import parser.model.ObjectWithUtParent;
+import parser.model.ParentLink;
 import parser.model.Salarie;
 import parser.model.StructureOrganisationnelle;
 import parser.model.UniteTravail;
-import parser.model.UtParent;
 import parser.model.factory.FregsFactory;
 
 public class ParseMeta4 {
@@ -197,16 +197,14 @@ public class ParseMeta4 {
         }
     }
 
-    private static void linkWithUtParentForTags(Element element, ObjectModel objectModel, String tagname) {
+    private static void linkWithUtParentForTags(Element element, ObjectWithUtParent objectModel, String tagname) {
         NodeList utChildrenNodeList = element.getElementsByTagName(tagname);
         for (int idxUtChildrenNodeList = 0; idxUtChildrenNodeList < utChildrenNodeList.getLength(); idxUtChildrenNodeList++) {
             Element utChildElement = (Element) utChildrenNodeList.item(idxUtChildrenNodeList);
 
-            UtParent utParent = new UtParent(utChildElement.getAttribute("codeUT"), utChildElement.getAttribute("dateDebut").replaceAll(
-                    "-",
-                    ""),
-                    utChildElement.getAttribute("dateFin").replaceAll("-", ""));
-            objectModel.getUtParents().add(utParent);
+            ParentLink utParent = new ParentLink(utChildElement.getAttribute("codeUT"), utChildElement.getAttribute("dateDebut"),
+                    utChildElement.getAttribute("dateFin"));
+            objectModel.getUtParentLinks().add(utParent);
 
         }
     }
