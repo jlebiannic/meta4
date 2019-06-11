@@ -11,18 +11,18 @@ public class ParentLink {
     private String idParent;
     @Getter
     @Setter
-    private Integer dateDebut;
+    private Integer startDate;
     @Getter
     @Setter
-    private Integer dateFin;
+    private Integer endDate;
 
     public ParentLink() {
     }
 
     public ParentLink(String codeUTParent, String dateDebut, String dateFin) {
         this.idParent = codeUTParent;
-        this.dateDebut = Integer.parseInt(dateDebut.replaceAll("[^(0-9)]", ""));
-        this.dateFin = Integer.parseInt(dateFin.replaceAll("[^(0-9)]", ""));
+        this.startDate = Integer.parseInt(dateDebut.replaceAll("[^(0-9)]", ""));
+        this.endDate = Integer.parseInt(dateFin.replaceAll("[^(0-9)]", ""));
     }
 
 }
