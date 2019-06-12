@@ -72,7 +72,12 @@ public class ParseMeta4 {
                 code2ut.put(ut.getCodeUT(), ut);
                 allUts.add(ut);
 
-                linkWithUtParentForTags(utMarkup, ut, "UTMere");
+            }
+
+            for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
+                Element utMarkup = (Element) unitesTravail.item(indexUT);
+                String codeUt = utMarkup.getAttribute("codeUT");
+                linkWithUtParentForTags(utMarkup, code2ut.get(codeUt), "UTMere");
             }
 
             // transformation de la collection d'UTs en JSON
@@ -202,9 +207,13 @@ public class ParseMeta4 {
         for (int idxUtChildrenNodeList = 0; idxUtChildrenNodeList < utChildrenNodeList.getLength(); idxUtChildrenNodeList++) {
             Element utChildElement = (Element) utChildrenNodeList.item(idxUtChildrenNodeList);
 
-            ParentLink utParent = new ParentLink(utChildElement.getAttribute("codeUT"), utChildElement.getAttribute("dateDebut"),
-                    utChildElement.getAttribute("dateFin"));
-            objectModel.getUtParentLinks().add(utParent);
+            String codeUt = utChildElement.getAttribute("codeUT");
+            UniteTravail ut = code2ut.get(codeUt);
+            if (ut != null) {
+                ParentLink utParent = new ParentLink(ut.getIdentifiant(), utChildElement.getAttribute("dateDebut"),
+                        utChildElement.getAttribute("dateFin"));
+                objectModel.getUtParentLinks().add(utParent);
+            }
 
         }
     }

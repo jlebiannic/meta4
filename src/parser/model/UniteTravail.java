@@ -9,10 +9,10 @@ public class UniteTravail extends ObjectWithUtParent {
     //	<UniteTravail codeUT="0020" datedebut="1999-09-01" dateFin="4000-01-01" libelle="XX - Direction" codeSociete="001" codeEtablissement="S7901">
     @Getter
     @Setter
-    private String id;
+    private String identifiant;
     @Getter
     @Setter
-	private String codeUT;
+    private String codeUT;
     @Getter
     @Setter
 	private String dateDebut;
@@ -31,7 +31,7 @@ public class UniteTravail extends ObjectWithUtParent {
 
     public UniteTravail() {
         super();
-        this.id = UUID.randomUUID().toString();
+        this.identifiant = UUID.randomUUID().toString();
     }
 
     public UniteTravail(String codeUT, String libelle, String codeSociete, String codeEtablissement) {

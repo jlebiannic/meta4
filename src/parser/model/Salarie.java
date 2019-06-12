@@ -9,7 +9,7 @@ public class Salarie extends ObjectWithUtParent {
     //	Salarie matricule="00009J" nomFamille="GONVER" prenom="VERONIQUE" mail="veronique.gonver@toto.com"
     @Getter
     @Setter
-    private String id;
+    private String identifiant;
     @Getter
     @Setter
     private String matricule;
@@ -49,7 +49,7 @@ public class Salarie extends ObjectWithUtParent {
 
     public Salarie() {
         super();
-        this.id = UUID.randomUUID().toString();
+        this.identifiant = UUID.randomUUID().toString();
     }
 
     public Salarie(String matricule, String nomFamille, String prenom, String mail) {
