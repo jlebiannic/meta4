@@ -28,6 +28,9 @@ public class UniteTravail extends ObjectWithUtParent {
     @Getter
     @Setter
 	private String codeEtablissement;
+    @Getter
+    @Setter
+    private String type;
 
     public UniteTravail() {
         super();
@@ -40,6 +43,7 @@ public class UniteTravail extends ObjectWithUtParent {
         this.libelle = libelle;
         this.codeSociete = codeSociete;
         this.codeEtablissement = codeEtablissement;
+        this.type = "Ut";
     }
 
 }

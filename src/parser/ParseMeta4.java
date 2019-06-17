@@ -81,7 +81,7 @@ public class ParseMeta4 {
             }
 
             // transformation de la collection d'UTs en JSON
-            objectToJsonFile(allUts, "target/uts.withDate.json");
+            objectToJsonFile(allUts, "target/uts.json");
 
             // SALARIE
             NodeList salaries = doc.getElementsByTagName("Salarie");
@@ -141,7 +141,7 @@ public class ParseMeta4 {
             }
 
             // transformation de la collection de salaries en JSON
-            objectToJsonFile(allSalaries, "target/salaries.withDate.json");
+            objectToJsonFile(allSalaries, "target/salaries.json");
 
             // Second pass : resolve hierarchy + manager
             for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
