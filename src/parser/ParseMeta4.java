@@ -20,14 +20,26 @@ import org.xml.sax.SAXException;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import fr.maif.autop.referentiels.fregs.api.io.salarie.ParametrageSalarie;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.contrat.Fonction;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.contrat.TempsTravail;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeContrat;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeHoraire;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeTempsTravail;
+import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeVariabilite;
+import fr.maif.autop.referentiels.fregs.model.common.Period;
+import fr.maif.autop.referentiels.fregs.model.meta4.ObjectWithUtParent;
+import fr.maif.autop.referentiels.fregs.model.meta4.ParentLink;
+import fr.maif.autop.referentiels.fregs.model.salarie.PeriodWithSalarieProps;
+import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
+import fr.maif.autop.referentiels.fregs.util.PeriodsUtil;
 import parser.model.Entite;
 import parser.model.Groupe;
-import parser.model.ObjectWithUtParent;
-import parser.model.ParentLink;
-import parser.model.Salarie;
 import parser.model.StructureOrganisationnelle;
 import parser.model.UniteTravail;
 import parser.model.factory.FregsFactory;
+import parser.util.DateUtil;
+import parser.util.TempsUtil;
 
 public class ParseMeta4 {
 
@@ -87,6 +99,9 @@ public class ParseMeta4 {
             NodeList salaries = doc.getElementsByTagName("Salarie");
             for (int indexSalarie = 0; indexSalarie < salaries.getLength(); indexSalarie++) {
                 Element salarieMarkup = (Element) salaries.item(indexSalarie);
+                // Construction des paramètres à date
+                List<Period> periods = new ArrayList<>();
+                Map<String, Period> mapAtributeNamePeriod = new HashMap<>();
                 Salarie salarie = new Salarie(
                         salarieMarkup.getAttribute("matricule"),
                         salarieMarkup.getAttribute("nomFamille"),
@@ -109,33 +124,100 @@ public class ParseMeta4 {
                         System.err.println("Mother UT is not known for Salarie : " + salarie.getMatricule() + "->" + codeUt);
                     }
                 }
+
+
                 // CONTRAT
+                TypeContrat typeContrat = null;
+                TempsTravail tempsTravail = null;
+                Fonction fonctionSalarie = null;
+
                 if (salarieMarkup.getElementsByTagName("Contrat").getLength() > 0) {
-                    String type = ((Element) salarieMarkup.getElementsByTagName("Contrat").item(0)).getAttribute("type");
-                    salarie.setTypeContrat(type);
+                    Element contratMarkup = (Element) salarieMarkup.getElementsByTagName("Contrat").item(0);
+                    String type = contratMarkup.getAttribute("type");
+                    typeContrat = TypeContrat.valueOf(type);
+                    
+                    // Gestion des périodes
+                    periods.add(Period.builder()
+                                    .startDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateDebut")))
+                                    .endDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateFin"))).build());
+                    mapAtributeNamePeriod.put("Contrat", Period.builder()
+                            .startDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateDebut")))
+                            .endDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateFin"))).build());
                 }
                 if (salarieMarkup.getElementsByTagName("TempsTravail").getLength() > 0) {
                     Element tempTravailMarkup = ((Element) salarieMarkup.getElementsByTagName("TempsTravail").item(0));
+                    tempsTravail = new TempsTravail();
                     String type = tempTravailMarkup.getAttribute("type");
-                    salarie.setTypeHoraire(type);
+                    tempsTravail.setType(TypeTempsTravail.valueOf(type));
                     String horaireContractuel = tempTravailMarkup.getAttribute("horaireContractuel");
                     if (horaireContractuel != null && !horaireContractuel.equals("")) {
-                        salarie.setHoraireContractuel(Double.parseDouble(horaireContractuel));
+                        tempsTravail.setHoraireContractuel(TempsUtil.strToQuardHeure(horaireContractuel));
                     }
                     String forfaitJourIndividuel = tempTravailMarkup.getAttribute("forfaitJourIndividuel");
                     if (forfaitJourIndividuel != null && !forfaitJourIndividuel.equals("")) {
-                        salarie.setForfaitJourIndividuel(Double.parseDouble(forfaitJourIndividuel));
+                        tempsTravail.setForfaitJourIndividuel(Double.parseDouble(forfaitJourIndividuel));
                     }
                     String typeHoraire = tempTravailMarkup.getAttribute("typeHoraire");
-                    salarie.setTypeHoraire(typeHoraire);
+                    tempsTravail.setTypeHoraire(TypeHoraire.valueOf(typeHoraire.toUpperCase().replaceAll(" ", "_")));
                     String typeVariabilite = tempTravailMarkup.getAttribute("typeVariabilite");
-                    salarie.setTypeVariabilite(typeVariabilite);
+                    tempsTravail.setTypeVariabilite(TypeVariabilite.valueOf(typeVariabilite.toUpperCase().replaceAll(" ", "_")));
+                    
+                    // Gestion des périodes
+                    periods.add(
+                            Period.builder()
+                                    .startDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateDebut")))
+                                    .endDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateFin"))).build());
+                    mapAtributeNamePeriod.put("TempsTravail", Period.builder()
+                            .startDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateDebut")))
+                            .endDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateFin"))).build());
                 }
                 if (salarieMarkup.getElementsByTagName("Fonction").getLength() > 0) {
-                    String fonction = ((Element) salarieMarkup.getElementsByTagName("Fonction").item(0)).getAttribute("libelle");
-                    salarie.setFonctionLibelle(fonction);
-                    String code = ((Element) salarieMarkup.getElementsByTagName("Fonction").item(0)).getAttribute("code");
-                    salarie.setFonctionCode(code);
+                    Element fonctionMarkup = (Element) salarieMarkup.getElementsByTagName("Fonction").item(0);
+                    fonctionSalarie = new Fonction();
+                    String fonction = fonctionMarkup.getAttribute("libelle");
+                    fonctionSalarie.setLibelle(fonction);
+                    String code = fonctionMarkup.getAttribute("code");
+                    fonctionSalarie.setCode(code);
+                    // Gestion des périodes
+                    periods.add(
+                            Period.builder()
+                                    .startDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateDebut")))
+                                    .endDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateFin"))).build());
+                    mapAtributeNamePeriod.put("Fonction", Period.builder()
+                            .startDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateDebut")))
+                            .endDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateFin"))).build());
+
+                }
+                
+                List<Period> newPeriods = new ArrayList<>();
+                periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).forEach(p -> {
+                    PeriodsUtil.addPeriod(newPeriods, p.getStartDate(), p.getStartDate());
+                });
+
+                // Transformation des Period en PeriodWithSalarieProps
+                List<PeriodWithSalarieProps> salariePeriods = new ArrayList<>();
+                newPeriods.forEach(p -> {
+                    PeriodWithSalarieProps periodWithSalarieProps = new PeriodWithSalarieProps(p.getStartDate(), p.getEndDate());
+                    periodWithSalarieProps.setValues(new ParametrageSalarie());
+                    salariePeriods.add(periodWithSalarieProps);
+                });
+                
+                for (PeriodWithSalarieProps p : salariePeriods) {
+                    salarie.getProps().add(p);
+                    Period contratPeriod = mapAtributeNamePeriod.get("Contrat");
+                    if (contratPeriod.getStartDate() <= p.getStartDate() && contratPeriod.getEndDate() >= p.getEndDate()) {
+                        p.getValues().setTypeContrat(typeContrat);
+                    }
+
+                    Period tempsTravailPeriod = mapAtributeNamePeriod.get("TempsTravail");
+                    if (tempsTravailPeriod.getStartDate() <= p.getStartDate() && tempsTravailPeriod.getEndDate() >= p.getEndDate()) {
+                        p.getValues().setTempsTravail(tempsTravail);
+                    }
+
+                    Period fonctionPeriod = mapAtributeNamePeriod.get("Fonction");
+                    if (fonctionPeriod.getStartDate() <= p.getStartDate() && fonctionPeriod.getEndDate() >= p.getEndDate()) {
+                        p.getValues().setFonction(fonctionSalarie);
+                    }
                 }
 
             }
@@ -236,21 +318,21 @@ public class ParseMeta4 {
                 System.out.println(",");
             }
             Salarie salarie = matricule2salarie.get(matricule);
-            System.out.print(
-                    "\t{\"matricule\":\"" + matricule
-                            + "\",\"prenom\":\"" + salarie.getPrenom()
-                            + "\",\"nom\":\"" + salarie.getNom()
-                            + "\",\"mail\":\"" + salarie.getMail()
-                            + "\",\"codeUtOrigine\":\"" + matricule2utCode.get(matricule)
-                            + "\",\"typeContrat\":\"" + salarie.getTypeContrat()
-                            + (salarie.getHoraireContractuel() != null ? "\",\"horaireContractuel\":\"" + salarie.getHoraireContractuel() : "")
-                            + (salarie.getForfaitJourIndividuel() != null ? "\",\"forfaitJourIndividuel\":\"" + salarie.getForfaitJourIndividuel()
-                                    : "")
-                            + "\",\"typeHoraire\":\"" + salarie.getTypeHoraire()
-                            + "\",\"typeVariabilite\":\"" + salarie.getTypeVariabilite()
-                            + "\",\"fonctionCode\":\"" + salarie.getFonctionCode()
-                            + "\",\"fonctionLibelle\":\"" + salarie.getFonctionLibelle()
-                            + "\"}");
+            //            System.out.print(
+            //                    "\t{\"matricule\":\"" + matricule
+            //                            + "\",\"prenom\":\"" + salarie.getPrenom()
+            //                            + "\",\"nom\":\"" + salarie.getNom()
+            //                            + "\",\"mail\":\"" + salarie.getMail()
+            //                            + "\",\"codeUtOrigine\":\"" + matricule2utCode.get(matricule)
+            //                            + "\",\"typeContrat\":\"" + salarie.getTypeContrat()
+            //                            + (salarie.getHoraireContractuel() != null ? "\",\"horaireContractuel\":\"" + salarie.getHoraireContractuel() : "")
+            //                            + (salarie.getForfaitJourIndividuel() != null ? "\",\"forfaitJourIndividuel\":\"" + salarie.getForfaitJourIndividuel()
+            //                                    : "")
+            //                            + "\",\"typeHoraire\":\"" + salarie.getTypeHoraire()
+            //                            + "\",\"typeVariabilite\":\"" + salarie.getTypeVariabilite()
+            //                            + "\",\"fonctionCode\":\"" + salarie.getFonctionCode()
+            //                            + "\",\"fonctionLibelle\":\"" + salarie.getFonctionLibelle()
+            //                            + "\"}");
             isFirst = false;
         }
         System.out.println("\n]");

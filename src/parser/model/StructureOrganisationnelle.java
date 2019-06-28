@@ -2,6 +2,7 @@ package parser.model;
 
 import java.util.List;
 
+import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
 import lombok.Data;
 
 @Data

@@ -2,11 +2,11 @@ package parser.model.factory;
 
 import org.modelmapper.ModelMapper;
 
+import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
 import parser.model.Entite;
 import parser.model.Filiere;
 import parser.model.Groupe;
 import parser.model.Regroupement;
-import parser.model.Salarie;
 import parser.model.StructureOrganisationnelle;
 import parser.model.UniteTravail;
 

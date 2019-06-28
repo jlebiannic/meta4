@@ -2,6 +2,7 @@ package parser.model;
 
 import java.util.UUID;
 
+import fr.maif.autop.referentiels.fregs.model.meta4.ObjectWithUtParent;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,7 +34,7 @@ public class UniteTravail extends ObjectWithUtParent {
     private String type;
 
     public UniteTravail() {
-        super();
+        super("Ut");
         this.identifiant = UUID.randomUUID().toString();
     }
 
