@@ -20,41 +20,41 @@ import org.xml.sax.SAXException;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import fr.maif.autop.referentiels.fregs.api.io.salarie.ParametrageSalarie;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.contrat.Fonction;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.contrat.TempsTravail;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeContrat;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeHoraire;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeTempsTravail;
-import fr.maif.autop.referentiels.fregs.api.io.salarie.type.TypeVariabilite;
-import fr.maif.autop.referentiels.fregs.model.common.Period;
-import fr.maif.autop.referentiels.fregs.model.meta4.ObjectWithUtParent;
-import fr.maif.autop.referentiels.fregs.model.meta4.ParentLink;
-import fr.maif.autop.referentiels.fregs.model.salarie.PeriodWithSalarieProps;
-import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
-import fr.maif.autop.referentiels.fregs.util.PeriodsUtil;
 import parser.model.Entite;
 import parser.model.Groupe;
 import parser.model.StructureOrganisationnelle;
-import parser.model.UniteTravail;
+import parser.model.common.Period;
 import parser.model.factory.FregsFactory;
+import parser.model.meta4.ObjectWithUtParent;
+import parser.model.meta4.ParentLink;
+import parser.model.meta4.Ut;
+import parser.model.salarie.ParametrageSalarie;
+import parser.model.salarie.PeriodWithSalarieProps;
+import parser.model.salarie.Salarie;
+import parser.model.salarie.contrat.Fonction;
+import parser.model.salarie.contrat.TempsTravail;
+import parser.model.salarie.type.TypeContrat;
+import parser.model.salarie.type.TypeHoraire;
+import parser.model.salarie.type.TypeTempsTravail;
+import parser.model.salarie.type.TypeVariabilite;
 import parser.util.DateUtil;
+import parser.util.PeriodsUtil;
 import parser.util.TempsUtil;
 
 public class ParseMeta4 {
 
-    private static Map<String, UniteTravail> code2ut = new HashMap<>();
-    private static Map<UniteTravail, List<UniteTravail>> parentUt2children = new HashMap<>();
-    private static List<UniteTravail> rootUTs = new ArrayList<>();
-    private static List<UniteTravail> allUts = new ArrayList<>();
+    private static Map<String, Ut> code2ut = new HashMap<>();
+    private static Map<Ut, List<Ut>> parentUt2children = new HashMap<>();
+    private static List<Ut> rootUTs = new ArrayList<>();
+    private static List<Ut> allUts = new ArrayList<>();
     private static List<Salarie> allSalaries = new ArrayList<>();
-    private static Map<UniteTravail, List<Salarie>> ut2salaries = new HashMap<>();
+    private static Map<Ut, List<Salarie>> ut2salaries = new HashMap<>();
     private static Map<String, Salarie> matricule2salarie = new HashMap<>();
-    private static Map<UniteTravail, Salarie> ut2manager = new HashMap<>();
+    private static Map<Ut, Salarie> ut2manager = new HashMap<>();
     private static Map<String, String> matricule2utCode = new HashMap<>();
 
     private static final String pad = "\t";
-    private static final Map<UniteTravail, StructureOrganisationnelle> utFregsMap = new HashMap<>();
+    private static final Map<Ut, StructureOrganisationnelle> utFregsMap = new HashMap<>();
 
     private static int maxDeep = 0;
 
@@ -74,10 +74,8 @@ public class ParseMeta4 {
 
             for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
                 Element utMarkup = (Element) unitesTravail.item(indexUT);
-                UniteTravail ut = new UniteTravail(
+                Ut ut = new Ut(
                         utMarkup.getAttribute("codeUT"),
-                        //                        utMarkup.getAttribute("datedebut"),
-                        //                        utMarkup.getAttribute("dateFin"),
                         utMarkup.getAttribute("libelle"),
                         utMarkup.getAttribute("codeSociete"),
                         utMarkup.getAttribute("codeEtablissement"));
@@ -114,7 +112,7 @@ public class ParseMeta4 {
                 if (salarieMarkup.getElementsByTagName("RattachementUniteTravail").getLength() > 0) {
                     String codeUt = ((Element) salarieMarkup.getElementsByTagName("RattachementUniteTravail").item(0)).getAttribute("codeUT");
                     if (code2ut.containsKey(codeUt)) {
-                        UniteTravail uniteTravail = code2ut.get(codeUt);
+                        Ut uniteTravail = code2ut.get(codeUt);
                         if (!ut2salaries.containsKey(uniteTravail)) {
                             ut2salaries.put(uniteTravail, new ArrayList<>());
                         }
@@ -236,11 +234,11 @@ public class ParseMeta4 {
             // Second pass : resolve hierarchy + manager
             for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
                 Element utMarkup = (Element) unitesTravail.item(indexUT);
-                UniteTravail uniteTravailFille = code2ut.get(utMarkup.getAttribute("codeUT"));
+                Ut uniteTravailFille = code2ut.get(utMarkup.getAttribute("codeUT"));
                 // Paranet UT
                 NodeList parentNodes = utMarkup.getElementsByTagName("UTMere");
                 if (parentNodes.getLength() == 1) {
-                    UniteTravail uniteTravailMere = code2ut.get(((Element) parentNodes.item(0)).getAttribute("codeUT"));
+                    Ut uniteTravailMere = code2ut.get(((Element) parentNodes.item(0)).getAttribute("codeUT"));
                     if (uniteTravailMere != null) {
                         if (!parentUt2children.containsKey(uniteTravailMere)) {
                             parentUt2children.put(uniteTravailMere, new ArrayList<>());
@@ -272,10 +270,10 @@ public class ParseMeta4 {
             System.out.println(unitesTravail.getLength() + " unités de travail");
             System.out.println(salaries.getLength() + " salariés");
 
-            //            for (UniteTravail uniteTravail : rootUTs) {
+            //            for (Ut uniteTravail : rootUTs) {
             //                printUt(uniteTravail, "", 1);
             //            }
-            //            for (UniteTravail uniteTravail : rootUTs) {
+            //            for (Ut uniteTravail : rootUTs) {
             //                createHtmlTree(uniteTravail);
             //            }
 
@@ -298,7 +296,7 @@ public class ParseMeta4 {
             Element utChildElement = (Element) utChildrenNodeList.item(idxUtChildrenNodeList);
 
             String codeUt = utChildElement.getAttribute("codeUT");
-            UniteTravail ut = code2ut.get(codeUt);
+            Ut ut = code2ut.get(codeUt);
             if (ut != null) {
                 ParentLink utParent = new ParentLink(ut.getIdentifiant(), utChildElement.getAttribute("dateDebut"),
                         utChildElement.getAttribute("dateFin"));
@@ -347,9 +345,9 @@ public class ParseMeta4 {
         return null;
     }
 
-    private static String createMongoCollectionUts(List<UniteTravail> uts) {
+    private static String createMongoCollectionUts(List<Ut> uts) {
         StringBuilder jsonObject = new StringBuilder();
-        for (UniteTravail uniteTravail : uts) {
+        for (Ut uniteTravail : uts) {
             boolean isRoot = rootUTs.contains(uniteTravail);
             if (!isRoot && uts.indexOf(uniteTravail) != 0) {
                 jsonObject.append(",");
@@ -368,7 +366,7 @@ public class ParseMeta4 {
         return jsonObject.toString();
     }
 
-    private static void createHtmlTree(UniteTravail uniteTravail) {
+    private static void createHtmlTree(Ut uniteTravail) {
         String item = "<b>" + uniteTravail.getLibelle() + "</b>";
         if (ut2salaries.containsKey(uniteTravail)) {
             int numberOfSalaries = ut2salaries.get(uniteTravail).size();
@@ -382,7 +380,7 @@ public class ParseMeta4 {
         if (parentUt2children.containsKey(uniteTravail)) {
             System.out.println("<span class=\"caret\">" + item + "</span>");
             System.out.println("<ul class=\"nested\">");
-            for (UniteTravail uniteTravailFille : parentUt2children.get(uniteTravail)) {
+            for (Ut uniteTravailFille : parentUt2children.get(uniteTravail)) {
                 createHtmlTree(uniteTravailFille);
             }
             System.out.println("</ul>");
@@ -396,10 +394,10 @@ public class ParseMeta4 {
         createFregsTree(code2ut.get("2337")); // codeUT="2337" "DRSOC - Direction Relation Soci�taire"
     }
 
-    private static void createFregsTree(UniteTravail rootUT) {
-        List<UniteTravail> children = parentUt2children.get(rootUT);
+    private static void createFregsTree(Ut rootUT) {
+        List<Ut> children = parentUt2children.get(rootUT);
         if (children != null) {
-            for (UniteTravail child : children) {
+            for (Ut child : children) {
                 createFregsTree(rootUT, child, 1);
             }
             ObjectMapper objectMapper = new ObjectMapper();
@@ -412,26 +410,26 @@ public class ParseMeta4 {
         }
     }
 
-    private static void createFregsTree(UniteTravail parentUT, UniteTravail ut, int level) {
+    private static void createFregsTree(Ut parentUT, Ut ut, int level) {
         createFreg(parentUT, ut, level);
-        List<UniteTravail> children = parentUt2children.get(ut);
+        List<Ut> children = parentUt2children.get(ut);
         if (children != null) {
             level = level + 1;
-            for (UniteTravail child : children) {
+            for (Ut child : children) {
                 createFregsTree(ut, child, level);
             }
         }
 
     }
 
-    private static void createFreg(UniteTravail parentUT, UniteTravail ut, int level) {
+    private static void createFreg(Ut parentUT, Ut ut, int level) {
         switch (level) {
             case 1:
                 StructureOrganisationnelle filiere = FregsFactory.createFiliere(ut, ut2manager.get(ut));
                 utFregsMap.put(ut, filiere);
                 break;
             case 2:
-                List<UniteTravail> children = parentUt2children.get(ut);
+                List<Ut> children = parentUt2children.get(ut);
                 StructureOrganisationnelle so = null;
                 if (children != null && children.size() > 0) {
                     so = FregsFactory.createRegroupement(ut, ut2manager.get(ut));
@@ -470,33 +468,33 @@ public class ParseMeta4 {
 
     }
 
-    private static int getTotalSalaries(UniteTravail uniteTravail) {
+    private static int getTotalSalaries(Ut uniteTravail) {
         int numberOfSalaries = 0;
         if (ut2salaries.containsKey(uniteTravail)) {
             numberOfSalaries = ut2salaries.get(uniteTravail).size();
         }
         if (parentUt2children.containsKey(uniteTravail)) {
-            for (UniteTravail uniteTravailFille : parentUt2children.get(uniteTravail)) {
+            for (Ut uniteTravailFille : parentUt2children.get(uniteTravail)) {
                 numberOfSalaries += getTotalSalaries(uniteTravailFille);
             }
         }
         return numberOfSalaries;
     }
 
-    private static int getSousUTs(UniteTravail uniteTravail) {
+    private static int getSousUTs(Ut uniteTravail) {
         int deep = 1;
         if (parentUt2children.containsKey(uniteTravail)) {
-            for (UniteTravail uniteTravailFille : parentUt2children.get(uniteTravail)) {
+            for (Ut uniteTravailFille : parentUt2children.get(uniteTravail)) {
                 deep += getSousUTs(uniteTravailFille);
             }
         }
         return deep;
     }
 
-    private static int getDeep(UniteTravail uniteTravail, int deep) {
+    private static int getDeep(Ut uniteTravail, int deep) {
         int maxDeep = deep;
         if (parentUt2children.containsKey(uniteTravail)) {
-            for (UniteTravail uniteTravailFille : parentUt2children.get(uniteTravail)) {
+            for (Ut uniteTravailFille : parentUt2children.get(uniteTravail)) {
                 int currentDeep = getDeep(uniteTravailFille, deep + 1);
                 if (maxDeep < currentDeep) {
                     maxDeep = currentDeep;
@@ -506,7 +504,7 @@ public class ParseMeta4 {
         return maxDeep;
     }
 
-    private static void printUt(UniteTravail uniteTravail, String padding, int deep) {
+    private static void printUt(Ut uniteTravail, String padding, int deep) {
         if (maxDeep < deep) {
             maxDeep = deep;
         }
@@ -521,7 +519,7 @@ public class ParseMeta4 {
             }
         }
         if (parentUt2children.containsKey(uniteTravail)) {
-            for (UniteTravail childUniteTravail : parentUt2children.get(uniteTravail)) {
+            for (Ut childUniteTravail : parentUt2children.get(uniteTravail)) {
                 printUt(childUniteTravail, padding + pad, deep + 1);
             }
         }

@@ -3,9 +3,9 @@ package parser.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
 import lombok.Getter;
 import lombok.Setter;
+import parser.model.salarie.Salarie;
 
 public class Filiere extends StructureOrganisationnelle {
 

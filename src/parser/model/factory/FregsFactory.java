@@ -2,13 +2,13 @@ package parser.model.factory;
 
 import org.modelmapper.ModelMapper;
 
-import fr.maif.autop.referentiels.fregs.model.salarie.Salarie;
 import parser.model.Entite;
 import parser.model.Filiere;
 import parser.model.Groupe;
 import parser.model.Regroupement;
 import parser.model.StructureOrganisationnelle;
-import parser.model.UniteTravail;
+import parser.model.meta4.Ut;
+import parser.model.salarie.Salarie;
 
 public class FregsFactory {
     private static ModelMapper mm = new ModelMapper();
@@ -24,7 +24,7 @@ public class FregsFactory {
         //        mm.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
     }
 
-    public static StructureOrganisationnelle createFiliere(UniteTravail ut, Salarie manager) {
+    public static StructureOrganisationnelle createFiliere(Ut ut, Salarie manager) {
 
         Filiere so = mm.map(ut, Filiere.class);
         if (manager != null) {
@@ -33,7 +33,7 @@ public class FregsFactory {
         return so;
     }
 
-    public static Regroupement createRegroupement(UniteTravail ut, Salarie manager) {
+    public static Regroupement createRegroupement(Ut ut, Salarie manager) {
         Regroupement so = mm.map(ut, Regroupement.class);
         if (manager != null) {
             so.setReferentMatricule(manager.getMatricule());
@@ -41,7 +41,7 @@ public class FregsFactory {
         return so;
     }
 
-    public static Entite createEntite(UniteTravail ut, Salarie manager) {
+    public static Entite createEntite(Ut ut, Salarie manager) {
         Entite so = mm.map(ut, Entite.class);
         if (manager != null) {
             so.setReferentMatricule(manager.getMatricule());
@@ -50,7 +50,7 @@ public class FregsFactory {
 
     }
 
-    public static Groupe createGroupe(UniteTravail ut, Salarie manager) {
+    public static Groupe createGroupe(Ut ut, Salarie manager) {
         Groupe so = mm.map(ut, Groupe.class);
         if (manager != null) {
             so.setReferentMatricule(manager.getMatricule());
