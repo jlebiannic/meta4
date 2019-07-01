@@ -153,6 +153,12 @@ public class ParseMeta4 {
                     if (horaireContractuel != null && !horaireContractuel.equals("")) {
                         tempsTravail.setHoraireContractuel(TempsUtil.strToQuardHeure(horaireContractuel));
                     }
+
+                    //                    String horaireReference = tempTravailMarkup.getAttribute("horaireReference");
+                    //                    if (horaireReference != null && !horaireReference.equals("")) {
+                    //                        tempsTravail.setHoraireReference(TempsUtil.strToQuardHeure(horaireReference));
+                    //                    }
+
                     String forfaitJourIndividuel = tempTravailMarkup.getAttribute("forfaitJourIndividuel");
                     if (forfaitJourIndividuel != null && !forfaitJourIndividuel.equals("")) {
                         tempsTravail.setForfaitJourIndividuel(Double.parseDouble(forfaitJourIndividuel));
@@ -189,9 +195,11 @@ public class ParseMeta4 {
 
                 }
                 
+                // TODO prendre en compte la date de fin, PeriodsUtil.addPeriod ne répond pas tout à fait au besoin
+
                 List<Period> newPeriods = new ArrayList<>();
                 periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).forEach(p -> {
-                    PeriodsUtil.addPeriod(newPeriods, p.getStartDate(), p.getStartDate());
+                    PeriodsUtil.addPeriod(newPeriods, p.getStartDate(), p.getEndDate());
                 });
 
                 // Transformation des Period en PeriodWithSalarieProps
