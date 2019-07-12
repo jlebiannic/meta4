@@ -129,6 +129,8 @@ public class ParseMeta4 {
                 TempsTravail tempsTravail = null;
                 Fonction fonctionSalarie = null;
 
+                // TODO: il peut y avoir plusieurs balise de chaque
+
                 if (salarieMarkup.getElementsByTagName("Contrat").getLength() > 0) {
                     Element contratMarkup = (Element) salarieMarkup.getElementsByTagName("Contrat").item(0);
                     String type = contratMarkup.getAttribute("type");
@@ -192,9 +194,26 @@ public class ParseMeta4 {
                             .endDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateFin"))).build());
 
                 }
+                if (salarieMarkup.getElementsByTagName("Teletravail").getLength() > 0) {
+                    Element teletravailMarkup = (Element) salarieMarkup.getElementsByTagName("Teletravail").item(0);
+                    // Gestion des périodes
+                    periods.add(
+                            Period.builder()
+                                    .startDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateDebut")))
+                                    .endDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateFin"))).build());
+                    mapAtributeNamePeriod.put(
+                            "Teletravail",
+                            Period.builder()
+                                    .startDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateDebut")))
+                                    .endDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateFin"))).build());
+
+                }
                 
                 // TODO prendre en compte la date de fin, PeriodsUtil.addPeriod ne répond pas tout à fait au besoin
 
+                @SuppressWarnings("unused")
+                List<Period> t = periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).collect(Collectors.toList());
+                
                 List<Period> newPeriods = new ArrayList<>();
                 periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).forEach(p -> {
                     PeriodsUtil.addPeriod(newPeriods, p.getStartDate(), p.getEndDate());
@@ -224,6 +243,13 @@ public class ParseMeta4 {
                     if (fonctionPeriod.getStartDate() <= p.getStartDate() && fonctionPeriod.getEndDate() >= p.getEndDate()) {
                         p.getValues().setFonction(fonctionSalarie);
                     }
+
+                    Period teletravailPeriod = mapAtributeNamePeriod.get("Teletravail");
+                    if (teletravailPeriod != null && teletravailPeriod.getStartDate() <= p.getStartDate() && teletravailPeriod.getEndDate() >= p
+                            .getEndDate()) {
+                        p.getValues().setTeletravail(true);
+                    }
+
                 }
 
             }
