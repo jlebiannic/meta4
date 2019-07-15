@@ -15,6 +15,9 @@ public class TempsTravail {
     private int horaireContractuel;
     @Getter
     @Setter
+    private int horaireReference;
+    @Getter
+    @Setter
     private double forfaitJourIndividuel;
     @Getter
     @Setter

@@ -154,10 +154,10 @@ public class ParseMeta4 {
                         tempsTravail.setHoraireContractuel(TempsUtil.strToQuardHeure(horaireContractuel));
                     }
 
-                    //                    String horaireReference = tempTravailMarkup.getAttribute("horaireReference");
-                    //                    if (horaireReference != null && !horaireReference.equals("")) {
-                    //                        tempsTravail.setHoraireReference(TempsUtil.strToQuardHeure(horaireReference));
-                    //                    }
+                    String horaireReference = tempTravailMarkup.getAttribute("horaireReference");
+                    if (horaireReference != null && !horaireReference.equals("")) {
+                        tempsTravail.setHoraireReference(TempsUtil.strToQuardHeure(horaireReference));
+                    }
 
                     String forfaitJourIndividuel = tempTravailMarkup.getAttribute("forfaitJourIndividuel");
                     if (forfaitJourIndividuel != null && !forfaitJourIndividuel.equals("")) {
