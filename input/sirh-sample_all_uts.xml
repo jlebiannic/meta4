@@ -6462,4 +6462,21 @@
       <Manager dateDebut="2019-01-01" dateFin="4000-01-01" matricule="10384K" />
     </UniteTravail>
   </UnitesTravail>
+  <Salaries> 
+    <Salarie matricule="77073M" nomFamille="FASCLA" prenom="CLAIRE" mail="claire.fascla@toto.com">
+      <Contrat dateDebut="2018-09-24" dateFin="2019-02-09" type="CDD">
+        <TempsTravail dateDebut="2018-09-24" dateFin="2019-02-09" type="TP" horaireContractuel="36.750000" horaireReference="36.750000" forfaitJourIndividuel="" typeHoraire="Horaire Variable" typeVariabilite="Sans Micro" />
+        <RattachementUniteTravail dateDebut="2018-09-24" dateFin="2019-02-09" codeUT="1720" />
+        <CategoriePointage dateDebut="2018-09-24" dateFin="2019-02-09" type="E" />
+        <Fonction dateDebut="2018-09-24" dateFin="2019-02-09" code="00116034" libelle="GESTIONNAIRE CONSEIL" />
+      </Contrat>
+      <Contrat dateDebut="2019-02-10" dateFin="2019-04-02" type="CDD">
+        <TempsTravail dateDebut="2019-02-10" dateFin="2019-04-02" type="TP" horaireContractuel="36.750000" horaireReference="36.750000" forfaitJourIndividuel="" typeHoraire="Horaire Variable" typeVariabilite="Sans Micro" />
+        <RattachementUniteTravail dateDebut="2019-02-10" dateFin="2019-04-02" codeUT="1720" />
+        <CategoriePointage dateDebut="2019-02-10" dateFin="2019-04-02" type="E" />
+        <Fonction dateDebut="2019-02-10" dateFin="2019-04-02" code="00116034" libelle="GESTIONNAIRE CONSEIL" />
+      </Contrat>
+    </Salarie>
+  </Salaries>
+  
 </DonneeMeta4>

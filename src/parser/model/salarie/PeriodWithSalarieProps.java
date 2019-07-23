@@ -13,6 +13,7 @@ public class PeriodWithSalarieProps extends Period {
 
     public PeriodWithSalarieProps(Integer startDate, Integer endDate) {
         super(startDate, endDate);
+        this.values = new ParametrageSalarie();
     }
 
     @Override
