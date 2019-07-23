@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DonneeMeta4 dateExtraction="2019-01-31" dateExecution="2019-01-31">
+  <UnitesTravail>
+    <UniteTravail codeUT="0677" datedebut="1999-09-01" dateFin="4000-01-01" libelle="XX - Filia Maif" codeSociete="012" codeEtablissement="F7901">
+      <StructureBudgetaire dateDebut="1999-09-01" dateFin="4000-01-01" codeStructurePole="P008" libelleStructurePole="Filia" codeStructureBudgetaire="FILIA" libelleStructureBudgetaire="Filia" codeStructureBudgetaire1="" libelleStructureBudgetaire1="" codeStructureBudgetaire2="" libelleStructureBudgetaire2="" />
+      <UTMere dateDebut="2016-10-01" dateFin="4000-01-01" codeUT="3120" />
+      <Manager dateDebut="2016-10-01" dateFin="4000-01-01" matricule="12010H" />
+    </UniteTravail>
+    <UniteTravail codeUT="3119" datedebut="2016-10-01" dateFin="4000-01-01" libelle="XX - Filia Maif - Gestion des Risques" codeSociete="012" codeEtablissement="F7901">
+      <StructureBudgetaire dateDebut="2016-10-01" dateFin="4000-01-01" codeStructurePole="P008" libelleStructurePole="Filia" codeStructureBudgetaire="FILIA" libelleStructureBudgetaire="Filia" codeStructureBudgetaire1="" libelleStructureBudgetaire1="" codeStructureBudgetaire2="" libelleStructureBudgetaire2="" />
+      <UTMere dateDebut="2016-10-01" dateFin="4000-01-01" codeUT="3120" />
+      <Manager dateDebut="2016-10-01" dateFin="4000-01-01" matricule="09860J" />
+    </UniteTravail>
+    <UniteTravail codeUT="3120" datedebut="2016-10-01" dateFin="4000-01-01" libelle="XX - Filia" codeSociete="012" codeEtablissement="F7901">
+      <StructureBudgetaire dateDebut="2016-10-01" dateFin="4000-01-01" codeStructurePole="P008" libelleStructurePole="Filia" codeStructureBudgetaire="FILIA" libelleStructureBudgetaire="Filia" codeStructureBudgetaire1="" libelleStructureBudgetaire1="" codeStructureBudgetaire2="" libelleStructureBudgetaire2="" />
+      <Manager dateDebut="2016-10-01" dateFin="4000-01-01" matricule="09860J" />
+    </UniteTravail>
+  </UnitesTravail>
+</DonneeMeta4>

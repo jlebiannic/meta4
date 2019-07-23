@@ -20,6 +20,7 @@ import org.xml.sax.SAXException;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.Getter;
 import parser.model.Entite;
 import parser.model.Groupe;
 import parser.model.StructureOrganisationnelle;
@@ -38,7 +39,6 @@ import parser.model.salarie.type.TypeHoraire;
 import parser.model.salarie.type.TypeTempsTravail;
 import parser.model.salarie.type.TypeVariabilite;
 import parser.util.DateUtil;
-import parser.util.PeriodsUtil;
 import parser.util.TempsUtil;
 
 public class ParseMeta4 {
@@ -129,106 +129,76 @@ public class ParseMeta4 {
                 TempsTravail tempsTravail = null;
                 Fonction fonctionSalarie = null;
 
-                // TODO: il peut y avoir plusieurs balise de chaque
+                PeriodsManager pm = new PeriodsManager();
 
-                if (salarieMarkup.getElementsByTagName("Contrat").getLength() > 0) {
-                    Element contratMarkup = (Element) salarieMarkup.getElementsByTagName("Contrat").item(0);
-                    String type = contratMarkup.getAttribute("type");
+
+                NodeList contratTags = salarieMarkup.getElementsByTagName("Contrat");
+                for (int i = 0; i < contratTags.getLength(); i++) {
+                    Element markup = (Element) contratTags.item(i);
+                    String type = markup.getAttribute("type");
                     typeContrat = TypeContrat.valueOf(type);
                     
                     // Gestion des pÈriodes
-                    periods.add(Period.builder()
-                                    .startDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateDebut")))
-                                    .endDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateFin"))).build());
-                    mapAtributeNamePeriod.put("Contrat", Period.builder()
-                            .startDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateDebut")))
-                            .endDate(DateUtil.strDateToInteger(contratMarkup.getAttribute("dateFin"))).build());
+                    addPeriod(pm, markup);
+                    addAttributePeriod("Contrat", mapAtributeNamePeriod, markup);
                 }
-                if (salarieMarkup.getElementsByTagName("TempsTravail").getLength() > 0) {
-                    Element tempTravailMarkup = ((Element) salarieMarkup.getElementsByTagName("TempsTravail").item(0));
+
+                NodeList salarieTags = salarieMarkup.getElementsByTagName("TempsTravail");
+                for (int i = 0; i < salarieTags.getLength(); i++) {
+                    Element markup = (Element) salarieTags.item(i++);
                     tempsTravail = new TempsTravail();
-                    String type = tempTravailMarkup.getAttribute("type");
+                    String type = markup.getAttribute("type");
                     tempsTravail.setType(TypeTempsTravail.valueOf(type));
-                    String horaireContractuel = tempTravailMarkup.getAttribute("horaireContractuel");
+                    String horaireContractuel = markup.getAttribute("horaireContractuel");
                     if (horaireContractuel != null && !horaireContractuel.equals("")) {
                         tempsTravail.setHoraireContractuel(TempsUtil.strToQuardHeure(horaireContractuel));
                     }
 
-                    String horaireReference = tempTravailMarkup.getAttribute("horaireReference");
+                    String horaireReference = markup.getAttribute("horaireReference");
                     if (horaireReference != null && !horaireReference.equals("")) {
                         tempsTravail.setHoraireReference(TempsUtil.strToQuardHeure(horaireReference));
                     }
 
-                    String forfaitJourIndividuel = tempTravailMarkup.getAttribute("forfaitJourIndividuel");
+                    String forfaitJourIndividuel = markup.getAttribute("forfaitJourIndividuel");
                     if (forfaitJourIndividuel != null && !forfaitJourIndividuel.equals("")) {
                         tempsTravail.setForfaitJourIndividuel(Double.parseDouble(forfaitJourIndividuel));
                     }
-                    String typeHoraire = tempTravailMarkup.getAttribute("typeHoraire");
+                    String typeHoraire = markup.getAttribute("typeHoraire");
                     tempsTravail.setTypeHoraire(TypeHoraire.valueOf(typeHoraire.toUpperCase().replaceAll(" ", "_")));
-                    String typeVariabilite = tempTravailMarkup.getAttribute("typeVariabilite");
+                    String typeVariabilite = markup.getAttribute("typeVariabilite");
                     tempsTravail.setTypeVariabilite(TypeVariabilite.valueOf(typeVariabilite.toUpperCase().replaceAll(" ", "_")));
                     
-                    // Gestion des pÈriodes
-                    periods.add(
-                            Period.builder()
-                                    .startDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateDebut")))
-                                    .endDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateFin"))).build());
-                    mapAtributeNamePeriod.put("TempsTravail", Period.builder()
-                            .startDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateDebut")))
-                            .endDate(DateUtil.strDateToInteger(tempTravailMarkup.getAttribute("dateFin"))).build());
+                    addPeriod(pm, markup);
+                    addAttributePeriod("TempsTravail", mapAtributeNamePeriod, markup);
                 }
-                if (salarieMarkup.getElementsByTagName("Fonction").getLength() > 0) {
-                    Element fonctionMarkup = (Element) salarieMarkup.getElementsByTagName("Fonction").item(0);
+                NodeList fonctionTags = salarieMarkup.getElementsByTagName("Fonction");
+                for (int i = 0; i < fonctionTags.getLength(); i++) {
+                    Element markup = (Element) fonctionTags.item(i);
                     fonctionSalarie = new Fonction();
-                    String fonction = fonctionMarkup.getAttribute("libelle");
+                    String fonction = markup.getAttribute("libelle");
                     fonctionSalarie.setLibelle(fonction);
-                    String code = fonctionMarkup.getAttribute("code");
+                    String code = markup.getAttribute("code");
                     fonctionSalarie.setCode(code);
                     // Gestion des pÈriodes
-                    periods.add(
-                            Period.builder()
-                                    .startDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateDebut")))
-                                    .endDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateFin"))).build());
-                    mapAtributeNamePeriod.put("Fonction", Period.builder()
-                            .startDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateDebut")))
-                            .endDate(DateUtil.strDateToInteger(fonctionMarkup.getAttribute("dateFin"))).build());
+                    addPeriod(pm, markup);
+                    addAttributePeriod("Fonction", mapAtributeNamePeriod, markup);
 
                 }
-                if (salarieMarkup.getElementsByTagName("Teletravail").getLength() > 0) {
-                    Element teletravailMarkup = (Element) salarieMarkup.getElementsByTagName("Teletravail").item(0);
-                    // Gestion des pÈriodes
-                    periods.add(
-                            Period.builder()
-                                    .startDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateDebut")))
-                                    .endDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateFin"))).build());
-                    mapAtributeNamePeriod.put(
-                            "Teletravail",
-                            Period.builder()
-                                    .startDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateDebut")))
-                                    .endDate(DateUtil.strDateToInteger(teletravailMarkup.getAttribute("dateFin"))).build());
+
+                NodeList teleTravailTags = salarieMarkup.getElementsByTagName("Teletravail");
+                for (int i = 0; i < teleTravailTags.getLength(); i++) {
+                    Element markup = (Element) teleTravailTags.item(i);
+                    addPeriod(pm, markup);
+                    addAttributePeriod("Teletravail", mapAtributeNamePeriod, markup);
 
                 }
                 
-                // TODO prendre en compte la date de fin, PeriodsUtil.addPeriod ne rÈpond pas tout ‡ fait au besoin
 
-                @SuppressWarnings("unused")
-                List<Period> t = periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).collect(Collectors.toList());
-                
-                List<Period> newPeriods = new ArrayList<>();
-                periods.stream().sorted((p1, p2) -> p1.getStartDate() - p2.getStartDate()).forEach(p -> {
-                    PeriodsUtil.addPeriod(newPeriods, p.getStartDate(), p.getEndDate());
-                });
-
-                // Transformation des Period en PeriodWithSalarieProps
-                List<PeriodWithSalarieProps> salariePeriods = new ArrayList<>();
-                newPeriods.forEach(p -> {
-                    PeriodWithSalarieProps periodWithSalarieProps = new PeriodWithSalarieProps(p.getStartDate(), p.getEndDate());
-                    periodWithSalarieProps.setValues(new ParametrageSalarie());
-                    salariePeriods.add(periodWithSalarieProps);
-                });
-                
-                for (PeriodWithSalarieProps p : salariePeriods) {
+                for (PeriodWithSalarieProps p : pm.getPeriods()) {
                     salarie.getProps().add(p);
+                    if (p.getValues() == null) {
+                        p.setValues(new ParametrageSalarie());
+                    }
                     Period contratPeriod = mapAtributeNamePeriod.get("Contrat");
                     if (contratPeriod.getStartDate() <= p.getStartDate() && contratPeriod.getEndDate() >= p.getEndDate()) {
                         p.getValues().setTypeContrat(typeContrat);
@@ -252,69 +222,137 @@ public class ParseMeta4 {
 
                 }
 
+                salarie.getProps().sort((p1, p2) -> p1.getStartDate().compareTo(p2.getStartDate()));
+
             }
 
             // transformation de la collection de salaries en JSON
             objectToJsonFile(allSalaries, "target/salaries.json");
 
-            // Second pass : resolve hierarchy + manager
-            for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
-                Element utMarkup = (Element) unitesTravail.item(indexUT);
-                Ut uniteTravailFille = code2ut.get(utMarkup.getAttribute("codeUT"));
-                // Paranet UT
-                NodeList parentNodes = utMarkup.getElementsByTagName("UTMere");
-                if (parentNodes.getLength() == 1) {
-                    Ut uniteTravailMere = code2ut.get(((Element) parentNodes.item(0)).getAttribute("codeUT"));
-                    if (uniteTravailMere != null) {
-                        if (!parentUt2children.containsKey(uniteTravailMere)) {
-                            parentUt2children.put(uniteTravailMere, new ArrayList<>());
-                        }
-                        parentUt2children.get(uniteTravailMere).add(uniteTravailFille);
-                    } else {
-                        System.err.println(
-                                "Mother UT is not known for UT : " + utMarkup.getAttribute("codeUT") + "->" + ((Element) parentNodes.item(0))
-                                        .getAttribute("codeUT"));
-                        rootUTs.add(uniteTravailFille);
-                    }
-                } else {
-                    rootUTs.add(uniteTravailFille);
-                }
-                // Manager
-                NodeList managers = utMarkup.getElementsByTagName("Manager");
-                // TODO : gestion multimanagers + date
-                if (managers.getLength() == 1) {
-                    String managerMatricule = ((Element) managers.item(0)).getAttribute("matricule");
-                    if (matricule2salarie.containsKey(managerMatricule)) {
-                        ut2manager.put(uniteTravailFille, matricule2salarie.get(managerMatricule));
-                    } else {
-                        System.err.println("UT manager is not known : " + utMarkup.getAttribute("codeUT") + "->" + managerMatricule);
-                    }
-                } else {
-                    System.err.println("UT without manager : " + utMarkup.getAttribute("codeUT"));
-                }
-            }
-            System.out.println(unitesTravail.getLength() + " unit√©s de travail");
-            System.out.println(salaries.getLength() + " salari√©s");
-
-            //            for (Ut uniteTravail : rootUTs) {
-            //                printUt(uniteTravail, "", 1);
+            //            // Second pass : resolve hierarchy + manager
+            //            for (int indexUT = 0; indexUT < unitesTravail.getLength(); indexUT++) {
+            //                Element utMarkup = (Element) unitesTravail.item(indexUT);
+            //                Ut uniteTravailFille = code2ut.get(utMarkup.getAttribute("codeUT"));
+            //                // Paranet UT
+            //                NodeList parentNodes = utMarkup.getElementsByTagName("UTMere");
+            //                if (parentNodes.getLength() == 1) {
+            //                    Ut uniteTravailMere = code2ut.get(((Element) parentNodes.item(0)).getAttribute("codeUT"));
+            //                    if (uniteTravailMere != null) {
+            //                        if (!parentUt2children.containsKey(uniteTravailMere)) {
+            //                            parentUt2children.put(uniteTravailMere, new ArrayList<>());
+            //                        }
+            //                        parentUt2children.get(uniteTravailMere).add(uniteTravailFille);
+            //                    } else {
+            //                        System.err.println(
+            //                                "Mother UT is not known for UT : " + utMarkup.getAttribute("codeUT") + "->" + ((Element) parentNodes.item(0))
+            //                                        .getAttribute("codeUT"));
+            //                        rootUTs.add(uniteTravailFille);
+            //                    }
+            //                } else {
+            //                    rootUTs.add(uniteTravailFille);
+            //                }
+            //                // Manager
+            //                NodeList managers = utMarkup.getElementsByTagName("Manager");
+            //                // TODO : gestion multimanagers + date
+            //                if (managers.getLength() == 1) {
+            //                    String managerMatricule = ((Element) managers.item(0)).getAttribute("matricule");
+            //                    if (matricule2salarie.containsKey(managerMatricule)) {
+            //                        ut2manager.put(uniteTravailFille, matricule2salarie.get(managerMatricule));
+            //                    } else {
+            //                        System.err.println("UT manager is not known : " + utMarkup.getAttribute("codeUT") + "->" + managerMatricule);
+            //                    }
+            //                } else {
+            //                    System.err.println("UT without manager : " + utMarkup.getAttribute("codeUT"));
+            //                }
             //            }
-            //            for (Ut uniteTravail : rootUTs) {
-            //                createHtmlTree(uniteTravail);
-            //            }
-
-            // System.out.println(createMongoCollectionUts(rootUTs));
-
-            // createMongoCollectionSalarie();
-
-            // CrÈation de l'arbre des FREGS
-            // createFregsTree();
-
-            //            System.out.println("MaxDeep : " + maxDeep);
+            //            System.out.println(unitesTravail.getLength() + " unit√©s de travail");
+            //            System.out.println(salaries.getLength() + " salari√©s");
+            //
+            //            //            for (Ut uniteTravail : rootUTs) {
+            //            //                printUt(uniteTravail, "", 1);
+            //            //            }
+            //            //            for (Ut uniteTravail : rootUTs) {
+            //            //                createHtmlTree(uniteTravail);
+            //            //            }
+            //
+            //            // System.out.println(createMongoCollectionUts(rootUTs));
+            //
+            //            // createMongoCollectionSalarie();
+            //
+            //            // CrÈation de l'arbre des FREGS
+            //            // createFregsTree();
+            //
+            //            //            System.out.println("MaxDeep : " + maxDeep);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
     }
+
+    private static void addAttributePeriod(String attrName, Map<String, Period> mapAtributeNamePeriod, Element markup) {
+        mapAtributeNamePeriod.put(
+                attrName,
+                Period.builder()
+                        .startDate(DateUtil.strDateToInteger(markup.getAttribute("dateDebut")))
+                        .endDate(DateUtil.strDateToInteger(markup.getAttribute("dateFin"))).build());
+    }
+
+    private static void addPeriod(PeriodsManager pm, Element markup) {
+        pm.addPeriod(
+                DateUtil.strDateToInteger(markup.getAttribute("dateDebut")),
+                DateUtil.strDateToInteger(markup.getAttribute("dateFin")));
+    }
+
+    public static class PeriodsManager {
+        @Getter
+        List<PeriodWithSalarieProps> periods = new ArrayList<>();
+
+        public void addPeriod(Integer startDate, Integer endDate) {
+            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
+            PeriodWithSalarieProps periodToInsert = new PeriodWithSalarieProps(startDate, endDate);
+            periods.forEach(p -> {
+                newPeriods.addAll(prepareInsertPeriode(periodToInsert, p));
+            });
+            newPeriods.add(periodToInsert);
+            this.periods = newPeriods;
+        }
+
+        private List<PeriodWithSalarieProps> prepareInsertPeriode(Period periodToInsert, Period p) {
+            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
+            Integer startDate = periodToInsert.getStartDate();
+            Integer endDate = periodToInsert.getEndDate();
+            // Si une des deux bornes est diffÈrente (startDate ou endDate) de celles de la pÈriode alors un dÈcoupage est effectuÈ sinon la pÈriode est identique et aucun traitement n'est effectuÈ
+            if (startDate != p.getStartDate() || endDate != p.getEndDate()) {
+                if (startDate >= p.getStartDate() && endDate <= p.getEndDate()) {
+                    // Insertion au milieu
+                    if (startDate > p.getStartDate()) {
+                        newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
+                    }
+                    if (endDate < p.getEndDate()) {
+                        newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
+                    }
+                } else if (startDate < p.getStartDate() && endDate <= p.getEndDate() && endDate >= p.getStartDate()) {
+                    // Insertion avec chevauchement ‡ gauche
+                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
+                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
+                    periodToInsert.setStartDate(p.getStartDate());
+                } else if (startDate >= p.getStartDate() && endDate > p.getEndDate() && startDate <= p.getEndDate()) {
+                    // Insertion avec chevauchement ‡ droite
+                    newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
+                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
+                    periodToInsert.setEndDate(p.getEndDate());
+                } else if (startDate < p.getStartDate() && endDate > p.getEndDate()) {
+                    // Insertion "englobante"
+                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
+                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
+                    periodToInsert.setStartDate(p.getStartDate());
+                    periodToInsert.setEndDate(p.getEndDate());
+                }
+            }
+            return newPeriods;
+        }
+    }
+
+    
 
     private static void linkWithUtParentForTags(Element element, ObjectWithUtParent objectModel, String tagname) {
         NodeList utChildrenNodeList = element.getElementsByTagName(tagname);
