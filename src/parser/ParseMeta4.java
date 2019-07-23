@@ -3,9 +3,12 @@ package parser;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -20,7 +23,6 @@ import org.xml.sax.SAXException;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.Getter;
 import parser.model.Entite;
 import parser.model.Groupe;
 import parser.model.StructureOrganisationnelle;
@@ -192,7 +194,6 @@ public class ParseMeta4 {
                     addAttributePeriod("Teletravail", mapAtributeNamePeriod, markup);
 
                 }
-                
 
                 for (PeriodWithSalarieProps p : pm.getPeriods()) {
                     salarie.getProps().add(p);
@@ -303,53 +304,120 @@ public class ParseMeta4 {
     }
 
     public static class PeriodsManager {
-        @Getter
-        List<PeriodWithSalarieProps> periods = new ArrayList<>();
+        List<Integer> dates = new ArrayList<>();
+        Set<Integer> startdates = new HashSet<>();
+        Set<Integer> enddates = new HashSet<>();
 
         public void addPeriod(Integer startDate, Integer endDate) {
-            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
-            PeriodWithSalarieProps periodToInsert = new PeriodWithSalarieProps(startDate, endDate);
-            periods.forEach(p -> {
-                newPeriods.addAll(prepareInsertPeriode(periodToInsert, p));
-            });
-            newPeriods.add(periodToInsert);
-            this.periods = newPeriods;
+            addDate(startDate);
+            addDate(endDate);
+            startdates.add(startDate);
+            enddates.add(endDate);
         }
 
-        private List<PeriodWithSalarieProps> prepareInsertPeriode(Period periodToInsert, Period p) {
-            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
-            Integer startDate = periodToInsert.getStartDate();
-            Integer endDate = periodToInsert.getEndDate();
-            // Si une des deux bornes est différente (startDate ou endDate) de celles de la période alors un découpage est effectué sinon la période est identique et aucun traitement n'est effectué
-            if (startDate != p.getStartDate() || endDate != p.getEndDate()) {
-                if (startDate >= p.getStartDate() && endDate <= p.getEndDate()) {
-                    // Insertion au milieu
-                    if (startDate > p.getStartDate()) {
-                        newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
+        private void addDate(Integer date) {
+            if (!this.dates.contains(date)) {
+            int index = Collections.binarySearch(this.dates, date);
+            if (index < 0) {
+                index = -index - 1;
+            }
+            this.dates.add(index, date);
+            }
+        }
+
+        public List<PeriodWithSalarieProps> getPeriods() {
+            List<PeriodWithSalarieProps> periods = new ArrayList<>();
+            for (int i = 0; i < this.dates.size(); i++) {
+                Integer currentDate = this.dates.get(i);
+                if (i + 1 < this.dates.size()) {
+                    Integer currentDate2 = this.dates.get(i + 1);
+                    if (this.isStartDate(currentDate) && this.isEndDate(currentDate2)) {
+                        periods.add(new PeriodWithSalarieProps(currentDate, currentDate2));
+                    } else if (this.isStartDate(currentDate) && this.isStartDate(currentDate2)) {
+                        periods.add(new PeriodWithSalarieProps(currentDate, DateUtil.addDay(currentDate2, -1)));
+                    } else if (this.isEndDate(currentDate) && this.isStartDate(currentDate2)) {
+                        periods.add(new PeriodWithSalarieProps(DateUtil.addDay(currentDate, 1), DateUtil.addDay(currentDate2, -1)));
+                    } else if (this.isEndDate(currentDate) && this.isEndDate(currentDate2)) {
+                        periods.add(new PeriodWithSalarieProps(DateUtil.addDay(currentDate, 1), currentDate2));
+                    } else {
+                        throw new RuntimeException("cas non traité");
                     }
-                    if (endDate < p.getEndDate()) {
-                        newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
-                    }
-                } else if (startDate < p.getStartDate() && endDate <= p.getEndDate() && endDate >= p.getStartDate()) {
-                    // Insertion avec chevauchement à gauche
-                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
-                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
-                    periodToInsert.setStartDate(p.getStartDate());
-                } else if (startDate >= p.getStartDate() && endDate > p.getEndDate() && startDate <= p.getEndDate()) {
-                    // Insertion avec chevauchement à droite
-                    newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
-                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
-                    periodToInsert.setEndDate(p.getEndDate());
-                } else if (startDate < p.getStartDate() && endDate > p.getEndDate()) {
-                    // Insertion "englobante"
-                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
-                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
-                    periodToInsert.setStartDate(p.getStartDate());
-                    periodToInsert.setEndDate(p.getEndDate());
                 }
             }
-            return newPeriods;
+            return periods;
         }
+
+        private boolean isEndDate(Integer date) {
+            return this.enddates.contains(date);
+        }
+
+        private boolean isStartDate(Integer date) {
+            return this.startdates.contains(date);
+        }
+
+        //        private void addDate(Integer date) {
+        //            int idx = 0;
+        //            if (!dates.contains(date)) {
+        //                int posToInsert = -1;
+        //                while (idx < dates.size() && posToInsert == -1) {
+        //                    Integer currentDate = dates.get(idx);
+        //                    if (currentDate > date) {
+        //                        posToInsert = idx;
+        //                    }
+        //                    idx++;
+        //                }
+        //                if (posToInsert == -1) {
+        //                    dates.add(date);
+        //                } else {
+        //                    dates.add(idx, date);
+        //                }
+        //            }
+        //        }
+
+        //        public void addPeriod(Integer startDate, Integer endDate) {
+        //            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
+        //            PeriodWithSalarieProps periodToInsert = new PeriodWithSalarieProps(startDate, endDate);
+        //            periods.forEach(p -> {
+        //                newPeriods.addAll(prepareInsertPeriode(periodToInsert, p));
+        //            });
+        //            newPeriods.add(periodToInsert);
+        //            this.periods = newPeriods;
+        //        }
+        //
+        //        private List<PeriodWithSalarieProps> prepareInsertPeriode(Period periodToInsert, Period p) {
+        //            List<PeriodWithSalarieProps> newPeriods = new ArrayList<>();
+        //            Integer startDate = periodToInsert.getStartDate();
+        //            Integer endDate = periodToInsert.getEndDate();
+        //            // Si une des deux bornes est différente (startDate ou endDate) de celles de la période alors un découpage est effectué sinon la période est identique et aucun traitement n'est effectué
+        //            if (startDate != p.getStartDate() || endDate != p.getEndDate()) {
+        //                if (startDate >= p.getStartDate() && endDate <= p.getEndDate()) {
+        //                    // Insertion au milieu
+        //                    if (startDate > p.getStartDate()) {
+        //                        newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
+        //                    }
+        //                    if (endDate < p.getEndDate()) {
+        //                        newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
+        //                    }
+        //                } else if (startDate < p.getStartDate() && endDate <= p.getEndDate() && endDate >= p.getStartDate()) {
+        //                    // Insertion avec chevauchement à gauche
+        //                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
+        //                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(endDate, 1), p.getEndDate()));
+        //                    periodToInsert.setStartDate(p.getStartDate());
+        //                } else if (startDate >= p.getStartDate() && endDate > p.getEndDate() && startDate <= p.getEndDate()) {
+        //                    // Insertion avec chevauchement à droite
+        //                    newPeriods.add(new PeriodWithSalarieProps(p.getStartDate(), DateUtil.addDay(startDate, -1)));
+        //                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
+        //                    periodToInsert.setEndDate(p.getEndDate());
+        //                } else if (startDate < p.getStartDate() && endDate > p.getEndDate()) {
+        //                    // Insertion "englobante"
+        //                    newPeriods.add(new PeriodWithSalarieProps(startDate, DateUtil.addDay(p.getStartDate(), -1)));
+        //                    newPeriods.add(new PeriodWithSalarieProps(DateUtil.addDay(p.getEndDate(), 1), endDate));
+        //                    periodToInsert.setStartDate(p.getStartDate());
+        //                    periodToInsert.setEndDate(p.getEndDate());
+        //                }
+        //            }
+        //            return newPeriods;
+        //        }
     }
 
     
